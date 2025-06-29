@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIH Diagnosis - How Idiopathic Intracranial Hypertension is Diagnosed</title>
+    <meta name="description" content="Learn about the diagnostic process for IIH including symptoms, tests, imaging, and diagnostic criteria.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .diagnostic-criteria {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .criteria-list li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .criteria-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .criteria-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .test-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+        
+        .test-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+        }
+        
+        .test-card h3 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .test-card .test-type {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .symptom-category {
+            background: #f3f4f6;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .symptom-category h4 {
+            color: #374151;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .symptom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .symptom-list li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .symptom-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #6b7280;
+        }
+        
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .warning-box h4 {
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .process-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .process-timeline::before {
+            content: "";
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        
+        .process-step {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+        
+        .process-step::before {
+            content: "";
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #3b82f6;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #e5e7eb;
+        }
+        
+        .process-step h4 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">IIH Explained</a></h1>
+                    <p>Diagnosis & Testing</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="diagnosis.html" class="active">Diagnosis</a></li>
+                    <li><a href="research-search.html">Research</a></li>
+                    <li><a href="specialists.html">Specialists</a></li>
+                    <li><a href="index.html#resources">Resources</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2>Finding Out if You Have IIH</h2>
+                <p>How doctors check if you have too much brain pressure</p>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f0f9ff;">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; padding: 2rem 0;">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Simple Explanation First 👨‍⚕️</h3>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="color: #1e40af; margin-bottom: 1rem;">Doctors need to check 3 main things:</h4>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">
+                            1️⃣ <strong>Your eyes</strong> - An eye doctor looks at the back of your eyes<br>
+                            2️⃣ <strong>Your brain</strong> - A special picture (MRI) of your brain<br>
+                            3️⃣ <strong>Your brain fluid</strong> - A test to check the pressure (spinal tap)
+                        </p>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="color: #dc2626; margin-bottom: 1rem;">What to expect:</h4>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">
+                            • <strong>It takes time</strong> - Usually several doctor visits<br>
+                            • <strong>Different doctors</strong> - Eye doctor, brain doctor, maybe others<br>
+                            • <strong>Some tests might be uncomfortable</strong> - But they help find the problem<br>
+                            • <strong>Ask questions</strong> - Doctors should explain everything
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.1rem; color: #059669; font-weight: 500;">
+                            👇 Keep reading for more detailed information
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="diagnostic-criteria">
+                    <h3>Modified Dandy Criteria (Updated 2013)</h3>
+                    <p>IIH diagnosis requires meeting ALL of the following criteria:</p>
+                    <ul class="criteria-list">
+                        <li>Signs and symptoms of increased intracranial pressure</li>
+                        <li>Elevated lumbar puncture opening pressure (≥25 cm H₂O in adults, ≥28 cm H₂O in children)</li>
+                        <li>Normal CSF composition</li>
+                        <li>No evidence of hydrocephalus, mass, structural lesion, or abnormal meningeal enhancement on MRI or contrast-enhanced CT</li>
+                        <li>No other cause of intracranial hypertension identified</li>
+                    </ul>
+                </div>
+
+                <h3>Common Symptoms</h3>
+                <div class="symptoms-grid">
+                    <div class="symptom-category">
+                        <h4>Primary Symptoms</h4>
+                        <ul class="symptom-list">
+                            <li>Severe headaches (94% of patients)</li>
+                            <li>Pulsatile tinnitus (60%)</li>
+                            <li>Visual disturbances</li>
+                            <li>Papilledema (optic disc swelling)</li>
+                        </ul>
+                    </div>
+                    <div class="symptom-category">
+                        <h4>Visual Symptoms</h4>
+                        <ul class="symptom-list">
+                            <li>Transient visual obscurations</li>
+                            <li>Blurred or double vision</li>
+                            <li>Visual field defects</li>
+                            <li>Photophobia (light sensitivity)</li>
+                        </ul>
+                    </div>
+                    <div class="symptom-category">
+                        <h4>Other Symptoms</h4>
+                        <ul class="symptom-list">
+                            <li>Neck/shoulder pain</li>
+                            <li>Dizziness</li>
+                            <li>Nausea</li>
+                            <li>Cognitive difficulties</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Red Flag Symptoms</h4>
+                    <p>Seek immediate medical attention if experiencing:</p>
+                    <ul>
+                        <li>Sudden, severe vision loss</li>
+                        <li>Persistent visual field defects</li>
+                        <li>Rapidly worsening headaches</li>
+                        <li>New neurological symptoms</li>
+                    </ul>
+                </div>
+
+                <h3>Diagnostic Tests</h3>
+                <div class="test-grid">
+                    <div class="test-card">
+                        <span class="test-type">Eye Examination</span>
+                        <h3>Comprehensive Eye Exam</h3>
+                        <p>Includes dilated fundus examination to check for papilledema, visual field testing, and visual acuity assessment.</p>
+                    </div>
+                    
+                    <div class="test-card">
+                        <span class="test-type">Imaging</span>
+                        <h3>MRI with MRV</h3>
+                        <p>Brain MRI with magnetic resonance venography to rule out other causes and look for signs of IIH (empty sella, optic nerve changes).</p>
+                    </div>
+                    
+                    <div class="test-card">
+                        <span class="test-type">Pressure Measurement</span>
+                        <h3>Lumbar Puncture</h3>
+                        <p>Measures CSF opening pressure. Must be done in lateral decubitus position with legs extended. Pressure ≥25 cm H₂O suggests IIH.</p>
+                    </div>
+                    
+                    <div class="test-card">
+                        <span class="test-type">Eye Imaging</span>
+                        <h3>OCT Scan</h3>
+                        <p>Optical coherence tomography provides detailed images of optic nerve and retinal nerve fiber layer thickness.</p>
+                    </div>
+                    
+                    <div class="test-card">
+                        <span class="test-type">Blood Tests</span>
+                        <h3>Laboratory Studies</h3>
+                        <p>Rule out other conditions. May include CBC, metabolic panel, thyroid function, vitamin levels (especially B12 and D).</p>
+                    </div>
+                    
+                    <div class="test-card">
+                        <span class="test-type">Additional Imaging</span>
+                        <h3>CT Venography</h3>
+                        <p>May be used to evaluate for venous sinus stenosis, especially if considering stenting treatment.</p>
+                    </div>
+                </div>
+
+                <h3>Diagnostic Process Timeline</h3>
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <h4>Initial Consultation</h4>
+                        <p>Primary care or emergency visit for symptoms. Initial neurological examination and referral to specialists.</p>
+                    </div>
+                    <div class="process-step">
+                        <h4>Ophthalmology Evaluation</h4>
+                        <p>Comprehensive eye exam including dilated funduscopy, visual fields, and OCT imaging.</p>
+                    </div>
+                    <div class="process-step">
+                        <h4>Neuroimaging</h4>
+                        <p>MRI brain with and without contrast, plus MRV to evaluate venous sinuses.</p>
+                    </div>
+                    <div class="process-step">
+                        <h4>Lumbar Puncture</h4>
+                        <p>If imaging is normal, LP performed to measure opening pressure and analyze CSF.</p>
+                    </div>
+                    <div class="process-step">
+                        <h4>Diagnosis & Treatment Plan</h4>
+                        <p>Confirmation of diagnosis based on criteria and initiation of appropriate treatment.</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>Important Considerations</h4>
+                    <ul>
+                        <li><strong>Proper positioning during LP is crucial</strong> - must be in lateral decubitus with legs extended</li>
+                        <li><strong>BMI affects pressure readings</strong> - higher BMI may have slightly higher normal pressures</li>
+                        <li><strong>Time of day matters</strong> - CSF pressure can fluctuate throughout the day</li>
+                        <li><strong>Multiple specialists needed</strong> - typically involves neurology, ophthalmology, and sometimes neurosurgery</li>
+                    </ul>
+                </div>
+
+                <h3>Differential Diagnosis</h3>
+                <p>Conditions that can mimic IIH and must be ruled out:</p>
+                <ul>
+                    <li>Cerebral venous sinus thrombosis</li>
+                    <li>Brain tumors or masses</li>
+                    <li>Chronic meningitis</li>
+                    <li>Medication-induced intracranial hypertension</li>
+                    <li>Sleep apnea</li>
+                    <li>Endocrine disorders</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
