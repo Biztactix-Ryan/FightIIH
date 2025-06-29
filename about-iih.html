@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About IIH - Understanding Idiopathic Intracranial Hypertension</title>
+    <meta name="description" content="Comprehensive information about IIH including global incidence rates, risk factors, and epidemiology">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .incidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .incidence-table th {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .incidence-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .incidence-table tr:hover {
+            background: var(--pale-blue);
+        }
+        
+        .incidence-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .data-visualization {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+        
+        .rate-bar {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        
+        .rate-bar-label {
+            min-width: 150px;
+            font-weight: 500;
+        }
+        
+        .rate-bar-graph {
+            flex: 1;
+            height: 24px;
+            background: var(--pale-blue);
+            border-radius: 4px;
+            position: relative;
+            margin: 0 1rem;
+        }
+        
+        .rate-bar-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-green));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .rate-bar-value {
+            min-width: 100px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .fact-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .fact-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .fact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .fact-label {
+            color: var(--text-body);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>IIH Explained</h1>
+                    <p>Simple Information About Brain Pressure</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-iih.html" class="active">About IIH</a></li>
+                    <li><a href="diagnosis.html">Diagnosis</a></li>
+                    <li><a href="research-search.html">Research</a></li>
+                    <li><a href="specialists.html">Find Help</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2>Understanding IIH Worldwide</h2>
+                <p class="hero-subtitle">Global Incidence, Risk Factors, and Epidemiology</p>
+                <p>Learn about how common IIH is around the world and who it affects most</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="info-box">
+                    <h3>What is Idiopathic Intracranial Hypertension?</h3>
+                    <p>IIH is a condition where the pressure inside your skull is increased without an obvious cause. The word "idiopathic" means we don't know exactly why it happens, and "intracranial hypertension" means high pressure inside the skull.</p>
+                </div>
+
+                <div class="fact-grid">
+                    <div class="fact-card">
+                        <div class="fact-number">9:1</div>
+                        <div class="fact-label">Female to Male Ratio</div>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-number">20-44</div>
+                        <div class="fact-label">Most Common Age Range</div>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-number">90%</div>
+                        <div class="fact-label">Associated with Obesity</div>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-number">25%</div>
+                        <div class="fact-label">Risk of Vision Loss if Untreated</div>
+                    </div>
+                </div>
+
+                <h3>Global Incidence Rates</h3>
+                <p>IIH affects different populations at different rates. Here's how common it is around the world:</p>
+
+                <div class="data-visualization">
+                    <h4>Incidence per 100,000 People per Year</h4>
+                    <div id="incidence-chart">
+                        <!-- Chart will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <table class="incidence-table">
+                    <thead>
+                        <tr>
+                            <th>Country/Region</th>
+                            <th>Incidence Rate</th>
+                            <th>Study Period</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🇬🇧 United Kingdom</td>
+                            <td>4.69 per 100,000</td>
+                            <td>2016-2017</td>
+                            <td>Highest rates in areas with obesity</td>
+                        </tr>
+                        <tr>
+                            <td>🇺🇸 United States</td>
+                            <td>3.5 per 100,000</td>
+                            <td>2015-2019</td>
+                            <td>Higher in southeastern states</td>
+                        </tr>
+                        <tr>
+                            <td>🇮🇱 Israel</td>
+                            <td>2.36 per 100,000</td>
+                            <td>2005-2017</td>
+                            <td>Increasing trend over time</td>
+                        </tr>
+                        <tr>
+                            <td>🇮🇹 Italy</td>
+                            <td>2.2 per 100,000</td>
+                            <td>2010-2015</td>
+                            <td>Regional variations noted</td>
+                        </tr>
+                        <tr>
+                            <td>🇯🇵 Japan</td>
+                            <td>0.9 per 100,000</td>
+                            <td>2010-2015</td>
+                            <td>Lower rates in Asian populations</td>
+                        </tr>
+                        <tr>
+                            <td>🇨🇦 Canada</td>
+                            <td>2.0 per 100,000</td>
+                            <td>2012-2018</td>
+                            <td>Similar to other Western countries</td>
+                        </tr>
+                        <tr>
+                            <td>🇦🇺 Australia</td>
+                            <td>1.8 per 100,000</td>
+                            <td>2014-2019</td>
+                            <td>Higher in indigenous populations</td>
+                        </tr>
+                        <tr>
+                            <td>🇰🇷 South Korea</td>
+                            <td>0.7 per 100,000</td>
+                            <td>2015-2020</td>
+                            <td>Among lowest globally</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <h4>Special Populations at Higher Risk</h4>
+                    <ul>
+                        <li><strong>Women of childbearing age (20-44):</strong> Up to 20 per 100,000</li>
+                        <li><strong>Obese women of childbearing age:</strong> Up to 50 per 100,000</li>
+                        <li><strong>Recent weight gain:</strong> 5-15% body weight increase significantly raises risk</li>
+                        <li><strong>PCOS (Polycystic Ovary Syndrome):</strong> 2-3x higher risk</li>
+                    </ul>
+                </div>
+
+                <h3>Risk Factors</h3>
+                <div class="simple-card">
+                    <h4>Major Risk Factors</h4>
+                    <ul>
+                        <li><strong>Obesity:</strong> The strongest modifiable risk factor</li>
+                        <li><strong>Recent weight gain:</strong> Even 5-10% increase matters</li>
+                        <li><strong>Female sex:</strong> 9 times more common in women</li>
+                        <li><strong>Reproductive age:</strong> Peak incidence 20-44 years</li>
+                        <li><strong>Certain medications:</strong> Vitamin A derivatives, tetracyclines, growth hormone</li>
+                        <li><strong>Sleep apnea:</strong> Often coexists with IIH</li>
+                    </ul>
+                </div>
+
+                <h3>Geographic Patterns</h3>
+                <div class="simple-card">
+                    <h4>Why Rates Vary by Region</h4>
+                    <p>Several factors contribute to geographic differences in IIH incidence:</p>
+                    <ul>
+                        <li><strong>Obesity rates:</strong> Countries with higher obesity prevalence tend to have more IIH</li>
+                        <li><strong>Genetic factors:</strong> Some populations may have protective or risk genes</li>
+                        <li><strong>Healthcare access:</strong> Better diagnosis in countries with advanced healthcare</li>
+                        <li><strong>Awareness:</strong> Increased recognition leads to more diagnoses</li>
+                        <li><strong>Environmental factors:</strong> Diet, lifestyle, and vitamin D levels may play a role</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Important Note About Statistics</h4>
+                    <p>These numbers represent diagnosed cases. Many people with mild IIH may go undiagnosed, so actual rates could be higher. If you have symptoms, don't assume you're safe because rates are low in your area - seek medical evaluation.</p>
+                </div>
+
+                <h3>The Growing Problem</h3>
+                <div class="simple-card">
+                    <h4>IIH Incidence is Increasing Worldwide</h4>
+                    <p>Studies show IIH rates have been rising over the past 20 years:</p>
+                    <ul>
+                        <li>🇬🇧 UK: Increased by 108% between 2002-2016</li>
+                        <li>🇺🇸 USA: Doubled in some regions over 15 years</li>
+                        <li>🇮🇱 Israel: 3-fold increase from 2005-2017</li>
+                        <li>Global trend correlates with rising obesity rates</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <h4>Good News</h4>
+                    <ul>
+                        <li>Early diagnosis and treatment prevent vision loss</li>
+                        <li>Weight loss of just 6-10% can lead to remission</li>
+                        <li>New treatments are being developed</li>
+                        <li>Increased awareness means better diagnosis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IIH Explained. Information provided for educational purposes.</p>
+            <p>Always consult with medical professionals for diagnosis and treatment.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Create visual representation of incidence rates
+        const incidenceData = [
+            { country: 'UK', rate: 4.69, color: '#0066cc' },
+            { country: 'USA', rate: 3.5, color: '#0066cc' },
+            { country: 'Israel', rate: 2.36, color: '#0066cc' },
+            { country: 'Italy', rate: 2.2, color: '#0066cc' },
+            { country: 'Canada', rate: 2.0, color: '#0066cc' },
+            { country: 'Australia', rate: 1.8, color: '#0066cc' },
+            { country: 'Japan', rate: 0.9, color: '#00a86b' },
+            { country: 'South Korea', rate: 0.7, color: '#00a86b' }
+        ];
+
+        const chartContainer = document.getElementById('incidence-chart');
+        const maxRate = Math.max(...incidenceData.map(d => d.rate));
+
+        incidenceData.forEach(data => {
+            const barDiv = document.createElement('div');
+            barDiv.className = 'rate-bar';
+            
+            const percentage = (data.rate / maxRate) * 100;
+            
+            barDiv.innerHTML = `
+                <div class="rate-bar-label">${data.country}</div>
+                <div class="rate-bar-graph">
+                    <div class="rate-bar-fill" style="width: ${percentage}%;"></div>
+                </div>
+                <div class="rate-bar-value">${data.rate} per 100k</div>
+            `;
+            
+            chartContainer.appendChild(barDiv);
+        });
+
+        // Animate bars on page load
+        setTimeout(() => {
+            document.querySelectorAll('.rate-bar-fill').forEach(bar => {
+                bar.style.width = bar.style.width;
+            });
+        }, 100);
+    </script>
+</body>
+</html>
