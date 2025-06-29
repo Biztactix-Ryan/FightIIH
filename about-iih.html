@@ -112,6 +112,62 @@
             color: var(--text-body);
             font-size: 0.9rem;
         }
+        
+        .causes-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .cause-box {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .cause-box:hover {
+            border-color: var(--primary-blue);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .cause-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cause-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .mechanism-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .flow-item {
+            background: var(--pale-blue);
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+        }
     </style>
 </head>
 <body>
@@ -305,6 +361,157 @@
                         <li>New treatments are being developed</li>
                         <li>Increased awareness means better diagnosis</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--bg-light);">
+            <div class="container">
+                <h2>Etiology and Pathophysiology of IIH</h2>
+                
+                <div class="info-box" style="background: var(--pale-blue); margin-bottom: 2rem;">
+                    <h3>Current Understanding</h3>
+                    <p><strong>Idiopathic Intracranial Hypertension (IIH) is a complex neurovascular disorder</strong> characterized by raised intracranial pressure (ICP), papilledema, and chronic headaches. Despite its name, recent research reveals IIH as a multifactorial condition with identifiable metabolic, endocrine, and anatomical contributors rather than being truly "idiopathic."</p>
+                </div>
+
+                <h3>Pathophysiological Framework</h3>
+                <div class="mechanism-flow">
+                    <div class="flow-item">Metabolic Dysregulation<br>(Obesity, Hormones, Inflammation)</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item">CSF Dynamics Disruption<br>(↑Production/↓Absorption)</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item">Elevated ICP<br>(≥25 cm H₂O)</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item">Clinical Manifestations<br>(Papilledema, Headache, Vision Loss)</div>
+                </div>
+
+                <div class="causes-diagram">
+                    <div class="cause-box">
+                        <div class="cause-icon">🧬</div>
+                        <div class="cause-title">Metabolic Syndrome</div>
+                        <p>Central adiposity, insulin resistance, leptin dysregulation, inflammatory cascade</p>
+                    </div>
+                    <div class="cause-box">
+                        <div class="cause-icon">💧</div>
+                        <div class="cause-title">CSF Homeostasis Failure</div>
+                        <p>Choroid plexus hypersecretion, arachnoid granulation dysfunction, glymphatic impairment</p>
+                    </div>
+                    <div class="cause-box">
+                        <div class="cause-icon">🩸</div>
+                        <div class="cause-title">Venous Hemodynamics</div>
+                        <p>Transverse sinus stenosis, elevated venous pressure, impaired CSF-venous gradient</p>
+                    </div>
+                    <div class="cause-box">
+                        <div class="cause-icon">🔬</div>
+                        <div class="cause-title">Molecular Mechanisms</div>
+                        <p>11β-HSD1 dysregulation, NKCC1/AQP1 upregulation, blood-brain barrier disruption</p>
+                    </div>
+                </div>
+
+                    <h3>Primary Risk Factors</h3>
+                    
+                    <div class="simple-card">
+                        <h4>Obesity and Weight Gain</h4>
+                        <ul>
+                            <li>Strongest modifiable risk factor for IIH</li>
+                            <li>Even moderate weight gain (5-15%) can precipitate IIH</li>
+                            <li>Central obesity may elevate intra-abdominal pressure, obstructing venous return from the brain</li>
+                            <li>Weight loss of 5-10% can induce disease remission</li>
+                            <li>Global IIH incidence is rising in parallel with obesity rates</li>
+                        </ul>
+                    </div>
+
+                    <div class="simple-card">
+                        <h4>Female Predominance and Hormonal Links</h4>
+                        <ul>
+                            <li>Female-to-male ratio up to 8:1</li>
+                            <li>Peak incidence in women of reproductive age (25-36 years)</li>
+                            <li><strong>Transgender evidence:</strong> Higher IIH rates in male-to-female transgender individuals on estrogen therapy</li>
+                            <li>Suggests female hormones (estrogen) may be a key underlying cause</li>
+                            <li>Pregnancy and hormonal changes may influence disease activity</li>
+                        </ul>
+                    </div>
+
+                    <h3>Pathophysiological Mechanisms</h3>
+                    
+                    <div class="simple-card">
+                        <h4>1. CSF Dynamics Dysregulation</h4>
+                        <p>IIH is fundamentally a disorder of cerebrospinal fluid regulation involving:</p>
+                        <ul>
+                            <li><strong>CSF Hypersecretion:</strong> Overproduction at the choroid plexus</li>
+                            <li><strong>Reduced CSF Absorption:</strong> Impaired drainage at arachnoid granulations</li>
+                            <li><strong>Glymphatic System Dysfunction:</strong> Impaired brain fluid clearance pathways</li>
+                            <li><strong>Structural alterations</strong> at the glia-neurovascular interface</li>
+                        </ul>
+                    </div>
+
+                    <div class="simple-card">
+                        <h4>2. Venous Outflow Obstruction</h4>
+                        <ul>
+                            <li><strong>Venous Sinus Stenosis (VSS):</strong> Present in many IIH patients</li>
+                            <li>Debate: Is VSS a cause or consequence of raised ICP?</li>
+                            <li>May create "positive feedback loop" - venous congestion reduces CSF absorption</li>
+                            <li><strong>Jugular Hypothesis:</strong> Chronic IJV outflow impairment leads to intracranial hypertension</li>
+                            <li>Stenosis often reverses after CSF diversion procedures</li>
+                        </ul>
+                    </div>
+
+                    <div class="simple-card">
+                        <h4>3. Metabolic and Hormonal Dysregulation</h4>
+                        <p>IIH has a unique metabolic profile beyond simple obesity:</p>
+                        <ul>
+                            <li><strong>Complex Hormonal Picture:</strong> 
+                                <ul>
+                                    <li>Androgen excess identified in some IIH patients</li>
+                                    <li>Female hormones (estrogen) strongly implicated - higher rates in transgender women on hormone therapy</li>
+                                    <li>Cases reported in both directions: androgens in female-to-male transitions, estrogens in male-to-female</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cortisol Metabolism:</strong> Increased 11β-HSD1 activity affects CSF homeostasis</li>
+                            <li><strong>Insulin Resistance:</strong> More pronounced than in obesity alone</li>
+                            <li><strong>Leptin Resistance:</strong> Hyperleptinemia is common</li>
+                            <li><strong>Systemic Inflammation:</strong> Pro-inflammatory state impairs CSF drainage</li>
+                            <li><strong>Metabolomic Changes:</strong> Altered amino acid and lipid metabolism</li>
+                        </ul>
+                    </div>
+
+                    <h3>Associated Conditions and Triggers</h3>
+                    
+                    <div class="simple-card">
+                        <h4>Medications</h4>
+                        <ul>
+                            <li><strong>Strongest associations:</strong>
+                                <ul>
+                                    <li>Vitamin A derivatives (hypervitaminosis A)</li>
+                                    <li>Tetracycline antibiotics</li>
+                                </ul>
+                            </li>
+                            <li><strong>Moderate associations:</strong>
+                                <ul>
+                                    <li>Corticosteroid use or withdrawal</li>
+                                    <li>Growth hormone</li>
+                                </ul>
+                            </li>
+                            <li><strong>Debated:</strong> Oral contraceptives (recent studies show no clear link)</li>
+                        </ul>
+                    </div>
+
+                    <div class="simple-card">
+                        <h4>Medical Conditions</h4>
+                        <ul>
+                            <li><strong>Obstructive Sleep Apnea (OSA):</strong> Hypoxia/hypercapnia increase ICP</li>
+                            <li><strong>PCOS:</strong> Common comorbidity with hormonal links</li>
+                            <li><strong>Vitamin Deficiencies:</strong> Severe vitamin D deficiency, iron-deficiency anemia</li>
+                            <li><strong>Metabolic Syndrome:</strong> Higher rates of cardiovascular comorbidities</li>
+                            <li><strong>Genetic Factors:</strong> ~5% have family history</li>
+                            <li><strong>Pregnancy Complications:</strong> Increased risk of gestational diabetes, pre-eclampsia</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Key Takeaway</h4>
+                        <p>IIH is a complex, multi-systemic disorder where metabolic, endocrine, and anatomical factors converge to dysregulate CSF dynamics and elevate intracranial pressure. Understanding these mechanisms helps guide treatment approaches targeting specific pathways.</p>
+                    </div>
                 </div>
             </div>
         </section>
