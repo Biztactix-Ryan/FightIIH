@@ -9,10 +9,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
     <style>
-        .search-container {
-            max-width: 1200px;
+        /* Layout with sidebar */
+        .search-layout {
+            display: flex;
+            gap: 2rem;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
+        }
+        
+        .sidebar {
+            flex: 0 0 300px;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 3px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        
+        .sidebar-section {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .search-container {
+            flex: 1;
+            min-width: 0;
         }
         
         .search-box {
@@ -184,15 +233,12 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: #f9fafb;
-            border-radius: 8px;
         }
         
         .tag-cloud .tag {
             cursor: pointer;
             transition: all 0.2s;
+            font-size: 0.875rem;
         }
         
         .tag-cloud .tag:hover {
@@ -203,6 +249,18 @@
         .tag-cloud .tag.active {
             background: #2563eb;
             color: white;
+        }
+        
+        .active-tags {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .active-tags-title {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
         }
         
         /* Timeline styles */
@@ -374,6 +432,19 @@
         }
         
         @media (max-width: 768px) {
+            .search-layout {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .sidebar {
+                position: static;
+                flex: none;
+                width: 100%;
+                max-height: none;
+                margin-bottom: 2rem;
+            }
+            
             .months-grid {
                 grid-template-columns: repeat(6, 1fr);
             }
@@ -427,7 +498,17 @@
     </header>
 
     <main class="main">
-        <div class="search-container">
+        <div class="search-layout">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Filter by Tags</h3>
+                    <div class="tag-cloud" id="tagCloud">
+                        <!-- Tags will be populated here -->
+                    </div>
+                </div>
+            </aside>
+            
+            <div class="search-container">
             <div class="stats-grid" id="statsGrid">
                 <div class="stat-card">
                     <div class="stat-number" id="totalPapers">0</div>
@@ -524,16 +605,13 @@
                 </div>
             </div>
 
-            <div class="tag-cloud" id="tagCloud">
-                <!-- Tags will be populated here -->
-            </div>
-
             <div class="results-info" id="resultsInfo">
                 Loading research database...
             </div>
 
             <div class="research-grid" id="researchGrid">
                 <div class="loading">Loading papers...</div>
+            </div>
             </div>
         </div>
     </main>
