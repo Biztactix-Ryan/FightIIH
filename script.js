@@ -68,8 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
             }
         });
     }, observerOptions);
@@ -77,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe all sections and cards
     const elementsToAnimate = document.querySelectorAll('.section, .simple-card, .info-box, .stat');
     elementsToAnimate.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.classList.add('fade-in-element');
         observer.observe(el);
     });
 });

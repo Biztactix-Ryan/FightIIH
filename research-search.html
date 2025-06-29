@@ -384,6 +384,21 @@
                 align-items: flex-start;
             }
         }
+        
+        @media (max-width: 480px) {
+            .months-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .month-bar {
+                padding: 0.5rem 0.25rem;
+            }
+            
+            .month-name {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -522,6 +537,13 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IIH Explained. Information provided for educational purposes.</p>
+            <p>Always consult with medical professionals for diagnosis and treatment.</p>
+        </div>
+    </footer>
 
     <script src="research-search.js"></script>
 </body>
