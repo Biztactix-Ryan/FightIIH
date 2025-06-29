@@ -153,15 +153,15 @@ p {
 }
 
 .nav-menu a.active {
-    background: var(--primary-blue);
-    color: white;
+    background: var(--primary-blue) !important;
+    color: white !important;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
 }
 
 .nav-menu a.active:hover {
-    background: var(--primary-green);
-    color: white;
+    background: var(--primary-green) !important;
+    color: white !important;
 }
 
 /* Mobile Navigation Toggle */
