@@ -31,7 +31,9 @@
       "month": 3,
       "abstract": "Comprehensive review highlighting rising incidence, racial/ethnic disparities, and risk of overdiagnosis. Emphasizes stringent application of diagnostic criteria.",
       "tags": ["Clinical Review", "Diagnosis", "Epidemiology"],
-      "category": "review"
+      "category": "review",
+      "doi": "10.1212/CON.0000000000001570",
+      "pubmedId": "40459311"
     },
     {
       "id": "chen-mollan-2025-treatment-monitoring",
@@ -175,6 +177,30 @@
       "pubmedId": "40239382",
       "abstract": "Explores brain volume differences in IIH patients, providing insights into structural changes associated with the condition.",
       "tags": ["Brain Volume", "Neuroimaging", "Structural Changes"],
+      "category": "research"
+    },
+    {
+      "id": "novak-2025-lumbar-infusion-pediatric",
+      "title": "Review of the lumbar infusion test use in pediatric populations",
+      "authors": ["Vojtěch Novák", "et al."],
+      "journal": "Fluids Barriers CNS",
+      "year": 2025,
+      "month": 5,
+      "pubmedId": "40375270",
+      "abstract": "Reviewed lumbar infusion test (LIT) in pediatric patients. Most studies were for predicting shunt responsiveness in hydrocephalus and IIH. Recommended standardizing protocols and focusing on signal characteristics.",
+      "tags": ["Pediatric", "Lumbar Infusion Test", "Diagnostic"],
+      "category": "review"
+    },
+    {
+      "id": "luo-2025-ivus-stent-selection",
+      "title": "Real time intravascular ultrasound evaluation and stent selection for cerebral venous sinus stenosis",
+      "authors": ["Gang Luo", "et al."],
+      "journal": "Scientific Reports",
+      "year": 2025,
+      "month": 5,
+      "pubmedId": "40350442",
+      "abstract": "Used intravascular ultrasound (IVUS) to evaluate and select stents for cerebral venous sinus stenosis, providing real-time guidance for optimal stent selection.",
+      "tags": ["IVUS", "Venous Stenting", "Imaging Guidance"],
       "category": "research"
     },
     {
