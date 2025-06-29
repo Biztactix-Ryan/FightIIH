@@ -336,7 +336,7 @@ document.addEventListener('keydown', function(e) {
 // Accessibility: Skip to content
 document.addEventListener('DOMContentLoaded', function() {
     const skipLink = document.createElement('a');
-    skipLink.href = '#what-is-iih';
+    skipLink.href = '#about';
     skipLink.textContent = 'Skip to content';
     skipLink.className = 'skip-link';
     skipLink.style.cssText = `
