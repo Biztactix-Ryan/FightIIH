@@ -6,42 +6,7 @@
     <title>IIH Diagnosis - How Idiopathic Intracranial Hypertension is Diagnosed</title>
     <meta name="description" content="Learn about the diagnostic process for IIH including symptoms, tests, imaging, and diagnostic criteria.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .diagnostic-criteria {
-            background: #f9fafb;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .criteria-list {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-        
-        .criteria-list li {
-            padding: 0.75rem 0 0.75rem 2rem;
-            position: relative;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .criteria-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .criteria-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
         .test-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -49,131 +14,39 @@
             margin: 2rem 0;
         }
         
-        .test-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.2s;
-        }
-        
-        .test-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
-        }
-        
-        .test-card h3 {
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .test-card .test-type {
+        .test-type {
             display: inline-block;
-            background: #dbeafe;
-            color: #1d4ed8;
+            background: var(--pale-green);
+            color: var(--primary-green);
             padding: 0.25rem 0.75rem;
             border-radius: 4px;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
-        .symptoms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .symptom-category {
-            background: #f3f4f6;
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        
-        .symptom-category h4 {
-            color: #374151;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .symptom-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .symptom-list li {
-            padding: 0.5rem 0;
-            color: #4b5563;
-            font-size: 0.9rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .symptom-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #6b7280;
-        }
-        
-        .warning-box {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .warning-box h4 {
-            color: #dc2626;
             margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
         
         .process-timeline {
-            position: relative;
+            border-left: 3px solid var(--primary-blue);
             padding-left: 2rem;
             margin: 2rem 0;
         }
         
-        .process-timeline::before {
-            content: "";
-            position: absolute;
-            left: 0.5rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e5e7eb;
-        }
-        
         .process-step {
-            position: relative;
             margin-bottom: 2rem;
-            padding-left: 1.5rem;
+            position: relative;
         }
         
         .process-step::before {
             content: "";
             position: absolute;
-            left: -2rem;
+            left: -2.5rem;
             top: 0.5rem;
             width: 1rem;
             height: 1rem;
-            background: #3b82f6;
+            background: var(--primary-green);
             border-radius: 50%;
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px #e5e7eb;
-        }
-        
-        .process-step h4 {
-            color: #1f2937;
-            margin-bottom: 0.5rem;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-blue);
         }
     </style>
 </head>
@@ -244,15 +117,15 @@
 
         <section class="section">
             <div class="container">
-                <div class="diagnostic-criteria">
-                    <h3>Modified Dandy Criteria (Updated 2013)</h3>
-                    <p>IIH diagnosis requires meeting ALL of the following criteria:</p>
-                    <ul class="criteria-list">
-                        <li>Signs and symptoms of increased intracranial pressure</li>
-                        <li>Elevated lumbar puncture opening pressure (≥25 cm H₂O in adults, ≥28 cm H₂O in children)</li>
-                        <li>Normal CSF composition</li>
-                        <li>No evidence of hydrocephalus, mass, structural lesion, or abnormal meningeal enhancement on MRI or contrast-enhanced CT</li>
-                        <li>No other cause of intracranial hypertension identified</li>
+                <div class="info-box">
+                    <h3>Diagnostic Criteria</h3>
+                    <p>Doctors need to confirm ALL of these to diagnose IIH:</p>
+                    <ul>
+                        <li>✓ Signs of increased brain pressure</li>
+                        <li>✓ High pressure reading on spinal tap (≥25 cm H₂O)</li>
+                        <li>✓ Normal spinal fluid</li>
+                        <li>✓ Normal brain scan (no tumors or blockages)</li>
+                        <li>✓ No other cause found</li>
                     </ul>
                 </div>
 
@@ -298,42 +171,42 @@
                     </ul>
                 </div>
 
-                <h3>Diagnostic Tests</h3>
+                <h3>Common Tests</h3>
                 <div class="test-grid">
-                    <div class="test-card">
-                        <span class="test-type">Eye Examination</span>
-                        <h3>Comprehensive Eye Exam</h3>
-                        <p>Includes dilated fundus examination to check for papilledema, visual field testing, and visual acuity assessment.</p>
+                    <div class="simple-card">
+                        <span class="test-type">Eye Test</span>
+                        <h4>Eye Examination</h4>
+                        <p>An eye doctor looks at the back of your eyes to check for swelling.</p>
                     </div>
                     
-                    <div class="test-card">
-                        <span class="test-type">Imaging</span>
-                        <h3>MRI with MRV</h3>
-                        <p>Brain MRI with magnetic resonance venography to rule out other causes and look for signs of IIH (empty sella, optic nerve changes).</p>
+                    <div class="simple-card">
+                        <span class="test-type">Brain Scan</span>
+                        <h4>MRI</h4>
+                        <p>A special picture of your brain to make sure nothing else is causing the pressure.</p>
                     </div>
                     
-                    <div class="test-card">
-                        <span class="test-type">Pressure Measurement</span>
-                        <h3>Lumbar Puncture</h3>
-                        <p>Measures CSF opening pressure. Must be done in lateral decubitus position with legs extended. Pressure ≥25 cm H₂O suggests IIH.</p>
+                    <div class="simple-card">
+                        <span class="test-type">Pressure Test</span>
+                        <h4>Spinal Tap</h4>
+                        <p>A test to measure the pressure of the fluid around your brain and spine.</p>
                     </div>
                     
-                    <div class="test-card">
-                        <span class="test-type">Eye Imaging</span>
-                        <h3>OCT Scan</h3>
-                        <p>Optical coherence tomography provides detailed images of optic nerve and retinal nerve fiber layer thickness.</p>
+                    <div class="simple-card">
+                        <span class="test-type">Eye Picture</span>
+                        <h4>OCT Scan</h4>
+                        <p>A special camera takes detailed pictures of your optic nerve.</p>
                     </div>
                     
-                    <div class="test-card">
-                        <span class="test-type">Blood Tests</span>
-                        <h3>Laboratory Studies</h3>
-                        <p>Rule out other conditions. May include CBC, metabolic panel, thyroid function, vitamin levels (especially B12 and D).</p>
+                    <div class="simple-card">
+                        <span class="test-type">Blood Work</span>
+                        <h4>Blood Tests</h4>
+                        <p>Check for other problems that might cause similar symptoms.</p>
                     </div>
                     
-                    <div class="test-card">
-                        <span class="test-type">Additional Imaging</span>
-                        <h3>CT Venography</h3>
-                        <p>May be used to evaluate for venous sinus stenosis, especially if considering stenting treatment.</p>
+                    <div class="simple-card">
+                        <span class="test-type">Vein Check</span>
+                        <h4>CT/MR Venography</h4>
+                        <p>Special scan to look at the veins in your brain.</p>
                     </div>
                 </div>
 
