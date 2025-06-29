@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIH Resources - Support Groups, Organizations & Help</title>
+    <meta name="description" content="Comprehensive list of IIH support organizations, online communities, financial assistance, and educational resources worldwide">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resource-category {
+            margin-bottom: 3rem;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .resource-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .resource-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-type {
+            display: inline-block;
+            background: var(--pale-green);
+            color: var(--primary-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-description {
+            color: var(--text-body);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .resource-link:hover {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+        
+        .resource-link::before {
+            content: "→";
+            margin-right: 0.5rem;
+        }
+        
+        .country-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .country-flag {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .emergency-box {
+            background: #fee2e2;
+            border-left: 4px solid #dc2626;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+        }
+        
+        .emergency-box h4 {
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>IIH Explained</h1>
+                    <p>Simple Information About Brain Pressure</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-iih.html">About IIH</a></li>
+                    <li><a href="diagnosis.html">Diagnosis</a></li>
+                    <li><a href="research-search.html">Research</a></li>
+                    <li><a href="specialists.html">Find Help</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2>IIH Resources & Support</h2>
+                <p>Find support organizations, online communities, educational materials, and assistance programs</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="emergency-box">
+                    <h4>⚠️ Emergency Symptoms</h4>
+                    <p>If you experience sudden severe vision loss, extreme headache with fever, or neurological symptoms, seek immediate medical attention at your nearest emergency department.</p>
+                </div>
+
+                <div class="resource-category">
+                    <h3>🌍 Major IIH Organizations Worldwide</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="resource-type">Global</span>
+                            <h4>Intracranial Hypertension Research Foundation (IHRF)</h4>
+                            <p class="resource-description">The only non-profit organization in the world devoted to supporting medical research of chronic intracranial hypertension. Provides education, support, and research funding.</p>
+                            <div class="resource-links">
+                                <a href="https://ihrfoundation.org/" target="_blank" class="resource-link">Visit IHRF Website</a>
+                                <a href="https://ihrfoundation.org/patients-family-friends/resources" target="_blank" class="resource-link">Patient Resources</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">United Kingdom</span>
+                            <h4>IIH UK</h4>
+                            <p class="resource-description">UK charity with an extremely supportive online group of over 5,000 members. Provides information, support, and advocacy for IIH patients.</p>
+                            <div class="resource-links">
+                                <a href="https://www.iih.org.uk/" target="_blank" class="resource-link">Visit IIH UK</a>
+                                <a href="https://www.iih.org.uk/section/5/1/iih_research" target="_blank" class="resource-link">Research Section</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">Australia</span>
+                            <h4>IH Australia</h4>
+                            <p class="resource-description">Dedicated to providing information and support to people with IIH in Australia. Members receive welcome packs with tracking tools and medic alert cards.</p>
+                            <div class="resource-links">
+                                <a href="http://www.ihaustralia.org.au/" target="_blank" class="resource-link">Visit IH Australia</a>
+                                <a href="http://www.ihaustralia.org.au/membership" target="_blank" class="resource-link">Become a Member</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">United Kingdom</span>
+                            <h4>The Brain Charity</h4>
+                            <p class="resource-description">Supports people with all neurological conditions including IIH. Offers practical help, emotional support, counselling, and social activities from their Liverpool centre.</p>
+                            <div class="resource-links">
+                                <a href="https://www.thebraincharity.org.uk/" target="_blank" class="resource-link">Visit The Brain Charity</a>
+                                <a href="https://www.thebraincharity.org.uk/condition/idiopathic-intracranial-hypertension/" target="_blank" class="resource-link">IIH Information</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-category">
+                    <h3>💬 Online Support Communities</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="resource-type">Facebook</span>
+                            <h4>IIH Support Groups</h4>
+                            <p class="resource-description">Multiple Facebook groups provide non-judgmental forums to ask questions and share experiences with other IIH patients.</p>
+                            <div class="resource-links">
+                                <a href="https://www.facebook.com/groups/iihsupportgroup/" target="_blank" class="resource-link">IIH Support Group (1000+ members)</a>
+                                <a href="https://www.facebook.com/SUPPORTIIH/" target="_blank" class="resource-link">IIH Support Community</a>
+                                <p style="margin-top: 0.5rem; font-size: 0.85rem;">Search Facebook for local/regional groups</p>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">Online Forum</span>
+                            <h4>DailyStrength</h4>
+                            <p class="resource-description">Online support group community for Pseudotumor Cerebri/IIH with forums, discussions, and peer support.</p>
+                            <div class="resource-links">
+                                <a href="https://www.dailystrength.org/group/pseudotumor-cerebri" target="_blank" class="resource-link">Join DailyStrength Group</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">Reddit</span>
+                            <h4>Reddit Communities</h4>
+                            <p class="resource-description">Reddit communities provide anonymous support and discussion forums for IIH patients worldwide.</p>
+                            <div class="resource-links">
+                                <a href="https://www.reddit.com/r/iih/" target="_blank" class="resource-link">r/iih Community</a>
+                                <a href="https://www.reddit.com/r/PseudotumorCerebri/" target="_blank" class="resource-link">r/PseudotumorCerebri</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-category">
+                    <h3>📚 Educational Resources</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="resource-type">Medical Society</span>
+                            <h4>North American Neuro-Ophthalmology Society (NANOS)</h4>
+                            <p class="resource-description">Professional society providing patient education materials and physician directories for neuro-ophthalmological conditions including IIH.</p>
+                            <div class="resource-links">
+                                <a href="https://www.nanosweb.org/iih/" target="_blank" class="resource-link">IIH Information Page</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">Government</span>
+                            <h4>National Eye Institute (NEI)</h4>
+                            <p class="resource-description">U.S. government institute providing reliable information about eye conditions and vision research, including IIH-related vision issues.</p>
+                            <div class="resource-links">
+                                <a href="https://www.nei.nih.gov/" target="_blank" class="resource-link">Visit NEI</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">Medical Centers</span>
+                            <h4>Leading Hospital Resources</h4>
+                            <p class="resource-description">Major medical centers provide patient education materials about IIH diagnosis and treatment.</p>
+                            <div class="resource-links">
+                                <a href="https://www.cedars-sinai.org/health-library/diseases-and-conditions/i/pseudotumor-cerebri.html" target="_blank" class="resource-link">Cedars-Sinai Guide</a>
+                                <a href="https://neurosurgery.weillcornell.org/condition/idiopathic-intracranial-hypertension-iih" target="_blank" class="resource-link">Weill Cornell Information</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-category">
+                    <h3>💰 Financial Assistance</h3>
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <span class="resource-type">Medication Assistance</span>
+                            <h4>Patient Access Network (PAN) Foundation</h4>
+                            <p class="resource-description">Helps underinsured patients afford their prescribed medications through disease-specific assistance programs.</p>
+                            <div class="resource-links">
+                                <a href="https://www.panfoundation.org/disease-funds/idiopathic-intracranial-hypertension/" target="_blank" class="resource-link">IIH Assistance Program</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-type">General Assistance</span>
+                            <h4>Additional Financial Resources</h4>
+                            <p class="resource-description">Various programs can help with medical costs:</p>
+                            <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                <li>Hospital financial assistance programs</li>
+                                <li>Pharmaceutical company patient assistance</li>
+                                <li>Local charity care programs</li>
+                                <li>State disability programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-category">
+                    <h3>🌏 Regional Resources</h3>
+                    
+                    <div class="country-section">
+                        <h4><span class="country-flag">🇨🇦</span>Canada</h4>
+                        <ul>
+                            <li><strong>Canadian Organization for Rare Disorders (CORD)</strong> - National network advocating for rare disease patients</li>
+                            <li><strong>Rare Disease Foundation</strong> - Connecting communities to transform lives</li>
+                            <li>Provincial health services often cover IIH treatments</li>
+                        </ul>
+                    </div>
+
+                    <div class="country-section">
+                        <h4><span class="country-flag">🇪🇺</span>Europe</h4>
+                        <ul>
+                            <li><strong>EURORDIS</strong> - European Organisation for Rare Diseases</li>
+                            <li>National rare disease organizations in each EU country</li>
+                            <li>European Reference Networks (ERNs) for rare diseases</li>
+                        </ul>
+                    </div>
+
+                    <div class="country-section">
+                        <h4><span class="country-flag">🇳🇿</span>New Zealand</h4>
+                        <ul>
+                            <li><strong>Rare Disorders NZ</strong> - Support and advocacy organization</li>
+                            <li>Regional hospital neurology departments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 3rem;">
+                    <h4>💡 Tips for Finding Support</h4>
+                    <ul>
+                        <li>Join multiple support groups to find the right fit for you</li>
+                        <li>Look for local/regional Facebook groups in your area</li>
+                        <li>Ask your doctor about local support groups</li>
+                        <li>Connect with others who have similar symptoms or treatments</li>
+                        <li>Remember: You're not alone in this journey</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Important Reminder</h4>
+                    <p>While support groups and online communities provide valuable peer support, always consult with qualified medical professionals for diagnosis and treatment decisions. Online advice should never replace professional medical care.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IIH Explained. Information provided for educational purposes.</p>
+            <p>Always consult with medical professionals for diagnosis and treatment.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
