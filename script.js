@@ -60,6 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add fade-in animation to elements as they come into view
 document.addEventListener('DOMContentLoaded', function() {
+    // Only animate on specific pages, not on dynamic content pages
+    const currentPage = window.location.pathname.split('/').pop();
+    const animatedPages = ['index.html', 'about-iih.html', 'diagnosis.html', 'resources.html', ''];
+    
+    // Skip animations on specialists and research pages
+    if (!animatedPages.includes(currentPage)) {
+        return;
+    }
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -69,13 +78,22 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                // Once animated, stop observing
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all sections and cards
-    const elementsToAnimate = document.querySelectorAll('.section, .simple-card, .info-box, .stat');
+    // Be more selective about what gets animated
+    const elementsToAnimate = document.querySelectorAll('.section, .simple-card, .info-box');
     elementsToAnimate.forEach(el => {
+        // Skip if element is already visible or above the fold
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            // Element is already in view, don't animate
+            return;
+        }
+        
         el.classList.add('fade-in-element');
         observer.observe(el);
     });
