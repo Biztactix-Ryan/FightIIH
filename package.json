@@ -1,0 +1,13 @@
+{
+  "name": "iih-research-site",
+  "version": "1.0.0",
+  "description": "IIH Research Database with Search",
+  "scripts": {
+    "build": "node scripts/build-search-index.js",
+    "serve": "python -m http.server 8000"
+  },
+  "devDependencies": {
+    "lunr": "^2.3.9",
+    "gray-matter": "^4.0.3"
+  }
+}
