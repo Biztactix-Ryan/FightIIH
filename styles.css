@@ -130,7 +130,7 @@ a:hover {
 .nav-logo h1 {
     font-size: 1.75rem;
     margin-bottom: 0;
-    color: var(--primary-color);
+    color: #ef4444;
 }
 
 .nav-logo p {
@@ -634,4 +634,133 @@ a:hover {
         font-size: 12pt;
         line-height: 1.4;
     }
+}
+
+/* New Research Page Styles */
+.pathophysiology-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+}
+
+.advances-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.advance-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.advance-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.advance-card h4 {
+    color: var(--text-primary);
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.advance-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.advance-card li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.advance-card li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.future-directions {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    border-radius: 8px;
+}
+
+.directions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.direction-item {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    border-top: 3px solid var(--success-color);
+}
+
+.direction-item h4 {
+    color: var(--success-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Weight Misconceptions Section */
+.weight-misconceptions {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+    border-radius: 12px;
+    border: 2px solid #f59e0b;
+}
+
+.weight-misconceptions h3 {
+    color: #92400e;
+    margin-bottom: 1rem;
+}
+
+.misconception-content {
+    color: var(--text-primary);
+}
+
+.misconception-content > p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.misconception-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.misconception-content li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.misconception-content li::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+}
+
+.misconception-content .info-box {
+    margin-top: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #f59e0b;
 }
