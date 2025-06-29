@@ -204,6 +204,18 @@
       "category": "research"
     },
     {
+      "id": "zloto-2025-occipital-tumors-venous",
+      "title": "The clinical characteristics, treatment and prognosis differences between occipital brain tumors with venous flow obstruction and occipital brain tumors without venous flow obstruction",
+      "authors": ["Ofira Zloto", "Mati Bakon", "Ruth Huna-Baron"],
+      "journal": "BMC Ophthalmology",
+      "year": 2025,
+      "month": 5,
+      "pubmedId": "40335973",
+      "abstract": "Patients with occipital tumors may present with symptoms similar to PTC secondary to venous drainage obstruction. Early multi-disciplinary treatment may lead to better results.",
+      "tags": ["Differential Diagnosis", "Occipital Tumors", "Venous Obstruction", "IIH Mimics"],
+      "category": "research"
+    },
+    {
       "id": "fargen-2024-jugular-hypothesis",
       "title": "The Jugular Hypothesis",
       "authors": ["Kyle M. Fargen", "et al."],
