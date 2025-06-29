@@ -213,6 +213,22 @@ p {
     margin: 0 auto 2rem;
 }
 
+.hero-subtitle {
+    font-size: 1.1rem !important;
+    color: var(--text-light) !important;
+    font-style: italic;
+    margin: -0.5rem auto 1rem !important;
+    font-weight: 400;
+}
+
+.hero-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
