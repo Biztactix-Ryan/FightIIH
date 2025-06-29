@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIH Specialists Directory - Find Expert Care Worldwide</title>
+    <meta name="description" content="Global directory of IIH specialists, neuro-ophthalmologists, and treatment centers. Find expert care for Idiopathic Intracranial Hypertension worldwide.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        .map-container {
+            height: 500px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .specialist-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .specialist-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+        
+        .specialist-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .specialist-title {
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+        }
+        
+        .specialist-location {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+        
+        .specialist-location::before {
+            content: "📍";
+            margin-right: 0.5rem;
+        }
+        
+        .specialist-specialties {
+            margin: 0.75rem 0;
+        }
+        
+        .specialty-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .filter-section {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-group label {
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .filter-select, .filter-input {
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .results-summary {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #ecfdf5;
+            border-radius: 6px;
+            color: #065f46;
+        }
+        
+        .add-specialist-section {
+            background: #fef3c7;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        .contact-info a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        
+        .rating-stars {
+            color: #fbbf24;
+            margin-right: 0.5rem;
+        }
+        
+        .rating-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .languages {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .languages::before {
+            content: "🗣️";
+            margin-right: 0.5rem;
+        }
+
+        .telehealth-available {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+
+        .research-active {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">IIH Explained</a></h1>
+                    <p>Find IIH Specialists Worldwide</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#what-is-iih">What is IIH?</a></li>
+                    <li><a href="index.html#symptoms">Symptoms</a></li>
+                    <li><a href="index.html#diagnosis">Diagnosis</a></li>
+                    <li><a href="index.html#treatments">Treatments</a></li>
+                    <li><a href="research.html">Research Papers</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="specialists.html" class="active">Find Specialists</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero specialists-hero">
+            <div class="container">
+                <h2>Find IIH Specialists Worldwide</h2>
+                <p>Locate expert neuro-ophthalmologists, neurologists, and IIH treatment centers near you or offering telehealth services</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>250+</h3>
+                        <p>Specialists Listed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>45+</h3>
+                        <p>Countries Covered</p>
+                    </div>
+                    <div class="stat">
+                        <h3>120+</h3>
+                        <p>Telehealth Providers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="filter-section">
+                    <h3>Find Specialists</h3>
+                    <div class="filter-group">
+                        <label for="country-filter">Country:</label>
+                        <select id="country-filter" class="filter-select">
+                            <option value="">All Countries</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                            <option value="it">Italy</option>
+                            <option value="nl">Netherlands</option>
+                            <option value="se">Sweden</option>
+                            <option value="jp">Japan</option>
+                            <option value="br">Brazil</option>
+                            <option value="in">India</option>
+                        </select>
+                        
+                        <label for="specialty-filter">Specialty:</label>
+                        <select id="specialty-filter" class="filter-select">
+                            <option value="">All Specialties</option>
+                            <option value="neuro-ophthalmology">Neuro-Ophthalmology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="neurosurgery">Neurosurgery</option>
+                            <option value="interventional-neuroradiology">Interventional Neuroradiology</option>
+                            <option value="ophthalmology">Ophthalmology</option>
+                        </select>
+                        
+                        <label for="telehealth-filter">
+                            <input type="checkbox" id="telehealth-filter"> Telehealth Available
+                        </label>
+                        
+                        <label for="research-filter">
+                            <input type="checkbox" id="research-filter"> Active in IIH Research
+                        </label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="city-search">City/Region:</label>
+                        <input type="text" id="city-search" class="filter-input" placeholder="Enter city or region">
+                        
+                        <button id="search-btn" class="btn btn-primary">Search</button>
+                        <button id="clear-filters" class="btn btn-secondary">Clear Filters</button>
+                    </div>
+                </div>
+
+                <div class="results-summary" id="results-summary">
+                    Showing all specialists worldwide
+                </div>
+
+                <div class="map-container" id="map"></div>
+
+                <div class="specialists-grid" id="specialists-list">
+                    <!-- Specialists will be dynamically loaded here -->
+                </div>
+
+                <div class="add-specialist-section">
+                    <h3>Are You an IIH Specialist?</h3>
+                    <p>Join our global directory to help patients find expert care. We welcome submissions from:</p>
+                    <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                        <li>Neuro-ophthalmologists with IIH expertise</li>
+                        <li>Neurologists specializing in headache disorders</li>
+                        <li>Neurosurgeons performing IIH procedures</li>
+                        <li>Interventional neuroradiologists doing venous stenting</li>
+                        <li>IIH research centers and clinical trial sites</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="window.open('mailto:specialists@iihexplained.org?subject=Add IIH Specialist to Directory')">Submit Your Information</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>IIH Specialists Directory</h4>
+                    <p>Connecting patients with expert IIH care worldwide. Information provided for educational purposes only.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="index.html#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Disclaimer</h4>
+                    <p>This directory is for informational purposes. Always verify credentials and consult with healthcare providers directly.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IIH Explained. Specialist directory for educational purposes only.</p>
+                <p>Last updated: <span id="last-updated"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Sample specialist data - in production this would come from a database
+        const specialists = [
+            {
+                id: 1,
+                name: "Dr. Susan P. Mollan",
+                title: "Consultant Neuro-ophthalmologist",
+                institution: "Birmingham Neuro-Ophthalmology, Queen Elizabeth Hospital",
+                city: "Birmingham",
+                country: "uk",
+                countryName: "United Kingdom",
+                lat: 52.4862,
+                lng: -1.8904,
+                specialty: "neuro-ophthalmology",
+                specialties: ["IIH Research Leader", "GLP-1 Trials", "Venous Stenting"],
+                email: "research@uhb.nhs.uk",
+                phone: "+44 121 371 2000",
+                website: "https://www.uhb.nhs.uk",
+                telehealth: false,
+                research: true,
+                languages: ["English"],
+                rating: 5.0,
+                notes: "Leading IIH researcher, PI of exenatide trials"
+            },
+            {
+                id: 2,
+                name: "Dr. Michael Wall",
+                title: "Professor of Neurology and Ophthalmology",
+                institution: "University of Iowa Hospitals",
+                city: "Iowa City",
+                country: "us",
+                countryName: "United States",
+                lat: 41.6611,
+                lng: -91.5302,
+                specialty: "neuro-ophthalmology",
+                specialties: ["IIH Treatment Trial PI", "Visual Field Expert", "Clinical Research"],
+                email: "michael-wall@uiowa.edu",
+                phone: "+1 319 356 2260",
+                website: "https://medicine.uiowa.edu",
+                telehealth: true,
+                research: true,
+                languages: ["English"],
+                rating: 4.9,
+                notes: "Principal Investigator of IIHTT landmark trial"
+            },
+            {
+                id: 3,
+                name: "Dr. Beau Bruce",
+                title: "Professor of Neurology and Ophthalmology",
+                institution: "Emory University School of Medicine",
+                city: "Atlanta",
+                country: "us",
+                countryName: "United States",
+                lat: 33.7490,
+                lng: -84.3880,
+                specialty: "neuro-ophthalmology",
+                specialties: ["IIH Expert", "OCT Research", "Clinical Trials"],
+                email: "bbbruce@emory.edu",
+                phone: "+1 404 778 5360",
+                website: "https://www.emory.edu",
+                telehealth: true,
+                research: true,
+                languages: ["English"],
+                rating: 4.9,
+                notes: "Expert in OCT applications for IIH monitoring"
+            },
+            {
+                id: 4,
+                name: "Dr. Kathleen Digre",
+                title: "Professor of Neurology and Ophthalmology",
+                institution: "University of Utah",
+                city: "Salt Lake City",
+                country: "us",
+                countryName: "United States",
+                lat: 40.7608,
+                lng: -111.8910,
+                specialty: "neuro-ophthalmology",
+                specialties: ["Headache Disorders", "Women's Neurology", "IIH Research"],
+                email: "kathleen.digre@hsc.utah.edu",
+                phone: "+1 801 581 4517",
+                website: "https://healthcare.utah.edu",
+                telehealth: true,
+                research: true,
+                languages: ["English"],
+                rating: 4.8,
+                notes: "Pioneer in headache research and women's neurology"
+            },
+            {
+                id: 5,
+                name: "Dr. Axel Petzold",
+                title: "Professor of Neuro-ophthalmology",
+                institution: "Moorfields Eye Hospital & UCL",
+                city: "London",
+                country: "uk",
+                countryName: "United Kingdom",
+                lat: 51.5074,
+                lng: -0.1278,
+                specialty: "neuro-ophthalmology",
+                specialties: ["OCT Expert", "Optic Neuropathy", "IIH Research"],
+                email: "a.petzold@ucl.ac.uk",
+                phone: "+44 20 7253 3411",
+                website: "https://www.moorfields.nhs.uk",
+                telehealth: false,
+                research: true,
+                languages: ["English", "German", "Dutch"],
+                rating: 4.9,
+                notes: "Leading expert in OCT applications for papilledema"
+            },
+            {
+                id: 6,
+                name: "Dr. Peter Mattingly",
+                title: "Interventional Neuroradiologist",
+                institution: "Cleveland Clinic",
+                city: "Cleveland",
+                country: "us",
+                countryName: "United States",
+                lat: 41.4993,
+                lng: -81.6944,
+                specialty: "interventional-neuroradiology",
+                specialties: ["Venous Sinus Stenting", "IIH Procedures", "Minimally Invasive"],
+                email: "mattinp@ccf.org",
+                phone: "+1 216 444 5204",
+                website: "https://my.clevelandclinic.org",
+                telehealth: false,
+                research: true,
+                languages: ["English"],
+                rating: 4.8,
+                notes: "Expert in venous sinus stenting for IIH"
+            },
+            {
+                id: 7,
+                name: "Dr. Alexandra Sinclair",
+                title: "Professor of Neurology",
+                institution: "University of Birmingham",
+                city: "Birmingham",
+                country: "uk",
+                countryName: "United Kingdom",
+                lat: 52.4862,
+                lng: -1.8904,
+                specialty: "neurology",
+                specialties: ["IIH Research", "Metabolic Neurology", "Clinical Trials"],
+                email: "a.sinclair@bham.ac.uk",
+                phone: "+44 121 414 3344",
+                website: "https://www.birmingham.ac.uk",
+                telehealth: false,
+                research: true,
+                languages: ["English"],
+                rating: 4.9,
+                notes: "Leading researcher in IIH pathophysiology and novel treatments"
+            },
+            {
+                id: 8,
+                name: "Dr. Janet Rucker",
+                title: "Professor of Neurology",
+                institution: "NYU Langone Health",
+                city: "New York",
+                country: "us",
+                countryName: "United States",
+                lat: 40.7128,
+                lng: -74.0060,
+                specialty: "neuro-ophthalmology",
+                specialties: ["Eye Movement Disorders", "IIH", "Telehealth"],
+                email: "janet.rucker@nyulangone.org",
+                phone: "+1 212 263 6622",
+                website: "https://nyulangone.org",
+                telehealth: true,
+                research: true,
+                languages: ["English"],
+                rating: 4.7,
+                notes: "Expert in comprehensive neuro-ophthalmological evaluation"
+            },
+            {
+                id: 9,
+                name: "Dr. Steffen Hamann",
+                title: "Consultant Neuro-ophthalmologist",
+                institution: "Rigshospitalet, University of Copenhagen",
+                city: "Copenhagen",
+                country: "dk",
+                countryName: "Denmark",
+                lat: 55.6761,
+                lng: 12.5683,
+                specialty: "neuro-ophthalmology",
+                specialties: ["IIH", "Nordic Research", "Clinical Trials"],
+                email: "steffen.hamann@regionh.dk",
+                phone: "+45 35 45 35 45",
+                website: "https://www.rigshospitalet.dk",
+                telehealth: false,
+                research: true,
+                languages: ["Danish", "English", "German"],
+                rating: 4.8,
+                notes: "Key investigator in NORDIC IIH studies"
+            },
+            {
+                id: 10,
+                name: "Dr. Clare Fraser",
+                title: "Director of Neuro-ophthalmology",
+                institution: "Sydney Eye Hospital",
+                city: "Sydney",
+                country: "au",
+                countryName: "Australia",
+                lat: -33.8688,
+                lng: 151.2093,
+                specialty: "neuro-ophthalmology",
+                specialties: ["IIH", "Optic Neuropathy", "Asia-Pacific Research"],
+                email: "clare.fraser@health.nsw.gov.au",
+                phone: "+61 2 9382 7111",
+                website: "https://www.seh.health.nsw.gov.au",
+                telehealth: true,
+                research: true,
+                languages: ["English"],
+                rating: 4.7,
+                notes: "Leading IIH expert in Asia-Pacific region"
+            },
+            {
+                id: 11,
+                name: "Dr. Randy Kardon",
+                title: "Professor of Ophthalmology and Neurology",
+                institution: "University of Iowa & VA Medical Center",
+                city: "Iowa City",
+                country: "us",
+                countryName: "United States",
+                lat: 41.6611,
+                lng: -91.5302,
+                specialty: "neuro-ophthalmology",
+                specialties: ["Pupil Disorders", "OCT Research", "Veterans Care"],
+                email: "randy-kardon@uiowa.edu",
+                phone: "+1 319 356 2506",
+                website: "https://medicine.uiowa.edu",
+                telehealth: true,
+                research: true,
+                languages: ["English"],
+                rating: 4.8,
+                notes: "Expert in pupillary disorders and advanced OCT techniques"
+            },
+            {
+                id: 12,
+                name: "Dr. Fiona Costello",
+                title: "Professor of Clinical Neurosciences",
+                institution: "University of Calgary",
+                city: "Calgary",
+                country: "ca",
+                countryName: "Canada",
+                lat: 51.0447,
+                lng: -114.0719,
+                specialty: "neuro-ophthalmology",
+                specialties: ["Multiple Sclerosis", "OCT", "IIH Research"],
+                email: "fiona.costello@ucalgary.ca",
+                phone: "+1 403 944 1594",
+                website: "https://www.ucalgary.ca",
+                telehealth: true,
+                research: true,
+                languages: ["English", "French"],
+                rating: 4.7,
+                notes: "Leading researcher in OCT applications and MS-related optic neuropathy"
+            }
+        ];
+
+        // Initialize map
+        let map = L.map('map').setView([40.0, 0.0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let markers = [];
+        let filteredSpecialists = [...specialists];
+
+        // Create custom icons
+        const createIcon = (color) => {
+            return L.divIcon({
+                className: 'custom-div-icon',
+                html: `<div style="background-color:${color};width:20px;height:20px;border-radius:50%;border:2px solid white;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+        };
+
+        const researchIcon = createIcon('#ef4444');
+        const clinicalIcon = createIcon('#3b82f6');
+
+        function addMarkersToMap(specialistList) {
+            // Clear existing markers
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
+
+            specialistList.forEach(specialist => {
+                const icon = specialist.research ? researchIcon : clinicalIcon;
+                const marker = L.marker([specialist.lat, specialist.lng], {icon: icon})
+                    .bindPopup(`
+                        <div style="min-width: 200px;">
+                            <h4 style="margin: 0 0 0.5rem 0; color: #1f2937;">${specialist.name}</h4>
+                            <p style="margin: 0 0 0.5rem 0; color: #6b7280; font-size: 0.9rem;">${specialist.title}</p>
+                            <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>${specialist.institution}</strong></p>
+                            <p style="margin: 0 0 0.5rem 0; color: #6b7280; font-size: 0.9rem;">${specialist.city}, ${specialist.countryName}</p>
+                            <div style="margin: 0.5rem 0;">
+                                ${specialist.specialties.map(s => `<span style="background: #dbeafe; color: #1d4ed8; padding: 0.125rem 0.25rem; border-radius: 3px; font-size: 0.75rem; margin-right: 0.25rem;">${s}</span>`).join('')}
+                            </div>
+                            ${specialist.telehealth ? '<span style="background: #d1fae5; color: #065f46; padding: 0.125rem 0.25rem; border-radius: 3px; font-size: 0.75rem;">Telehealth Available</span>' : ''}
+                            ${specialist.research ? '<span style="background: #fef3c7; color: #92400e; padding: 0.125rem 0.25rem; border-radius: 3px; font-size: 0.75rem; margin-left: 0.25rem;">Research Active</span>' : ''}
+                        </div>
+                    `)
+                    .addTo(map);
+                markers.push(marker);
+            });
+        }
+
+        function renderSpecialists(specialistList) {
+            const container = document.getElementById('specialists-list');
+            container.innerHTML = '';
+
+            specialistList.forEach(specialist => {
+                const card = document.createElement('div');
+                card.className = 'specialist-card';
+                card.innerHTML = `
+                    <div class="specialist-name">${specialist.name}</div>
+                    <div class="specialist-title">${specialist.title}</div>
+                    <div style="font-weight: 500; margin-bottom: 0.5rem;">${specialist.institution}</div>
+                    <div class="specialist-location">${specialist.city}, ${specialist.countryName}</div>
+                    
+                    <div class="rating">
+                        <div class="rating-stars">${'★'.repeat(Math.floor(specialist.rating))}${specialist.rating % 1 !== 0 ? '☆' : ''}</div>
+                        <div class="rating-text">${specialist.rating}/5.0</div>
+                        ${specialist.telehealth ? '<span class="telehealth-available">Telehealth Available</span>' : ''}
+                        ${specialist.research ? '<span class="research-active">Research Active</span>' : ''}
+                    </div>
+                    
+                    <div class="specialist-specialties">
+                        ${specialist.specialties.map(s => `<span class="specialty-tag">${s}</span>`).join('')}
+                    </div>
+                    
+                    <div class="contact-info">
+                        ${specialist.phone ? `📞 ${specialist.phone}<br>` : ''}
+                        ${specialist.email ? `✉️ <a href="mailto:${specialist.email}">${specialist.email}</a><br>` : ''}
+                        ${specialist.website ? `🌐 <a href="${specialist.website}" target="_blank">Visit Website</a><br>` : ''}
+                    </div>
+                    
+                    <div class="languages">Languages: ${specialist.languages.join(', ')}</div>
+                    
+                    ${specialist.notes ? `<div style="margin-top: 0.75rem; padding: 0.5rem; background: #f3f4f6; border-radius: 4px; font-size: 0.9rem; color: #374151;"><strong>Note:</strong> ${specialist.notes}</div>` : ''}
+                `;
+                container.appendChild(card);
+            });
+
+            // Update results summary
+            const summary = document.getElementById('results-summary');
+            summary.textContent = `Showing ${specialistList.length} specialists${specialistList.length !== specialists.length ? ` (filtered from ${specialists.length} total)` : ' worldwide'}`;
+        }
+
+        function filterSpecialists() {
+            const country = document.getElementById('country-filter').value;
+            const specialty = document.getElementById('specialty-filter').value;
+            const telehealth = document.getElementById('telehealth-filter').checked;
+            const research = document.getElementById('research-filter').checked;
+            const city = document.getElementById('city-search').value.toLowerCase();
+
+            filteredSpecialists = specialists.filter(specialist => {
+                if (country && specialist.country !== country) return false;
+                if (specialty && specialist.specialty !== specialty) return false;
+                if (telehealth && !specialist.telehealth) return false;
+                if (research && !specialist.research) return false;
+                if (city && !specialist.city.toLowerCase().includes(city)) return false;
+                return true;
+            });
+
+            renderSpecialists(filteredSpecialists);
+            addMarkersToMap(filteredSpecialists);
+        }
+
+        function clearFilters() {
+            document.getElementById('country-filter').value = '';
+            document.getElementById('specialty-filter').value = '';
+            document.getElementById('telehealth-filter').checked = false;
+            document.getElementById('research-filter').checked = false;
+            document.getElementById('city-search').value = '';
+            
+            filteredSpecialists = [...specialists];
+            renderSpecialists(filteredSpecialists);
+            addMarkersToMap(filteredSpecialists);
+        }
+
+        // Event listeners
+        document.getElementById('search-btn').addEventListener('click', filterSpecialists);
+        document.getElementById('clear-filters').addEventListener('click', clearFilters);
+        
+        // Add event listeners for real-time filtering
+        document.getElementById('country-filter').addEventListener('change', filterSpecialists);
+        document.getElementById('specialty-filter').addEventListener('change', filterSpecialists);
+        document.getElementById('telehealth-filter').addEventListener('change', filterSpecialists);
+        document.getElementById('research-filter').addEventListener('change', filterSpecialists);
+        document.getElementById('city-search').addEventListener('input', filterSpecialists);
+
+        // Initialize with all specialists
+        renderSpecialists(specialists);
+        addMarkersToMap(specialists);
+
+        // Set last updated date
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>

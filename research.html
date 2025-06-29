@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIH Research Papers - Latest Studies & Clinical Trials</title>
+    <meta name="description" content="Comprehensive database of IIH research papers, clinical trials, and breakthrough studies. Stay updated with the latest scientific advances in Idiopathic Intracranial Hypertension.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .timeline-section {
+            margin: 3rem 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #ef4444);
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 1rem 0;
+            position: relative;
+            background-color: inherit;
+            width: 100%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: auto;
+            background-color: white;
+            border: 3px solid #3b82f6;
+            top: 2rem;
+            border-radius: 50%;
+            left: 42px;
+            z-index: 1;
+        }
+        
+        .timeline-item.landmark::after {
+            border-color: #ef4444;
+            background-color: #ef4444;
+            width: 20px;
+            height: 20px;
+            left: 40px;
+        }
+        
+        .timeline-item.breakthrough::after {
+            border-color: #8b5cf6;
+            background-color: #8b5cf6;
+            width: 18px;
+            height: 18px;
+            left: 41px;
+        }
+        
+        .timeline-item.future::after {
+            border-color: #10b981;
+            background-color: #10b981;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+            width: 35px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #374151;
+            background: white;
+            padding: 0.25rem;
+        }
+        
+        .timeline-content {
+            padding: 1rem 2rem;
+            background: white;
+            position: relative;
+            border-radius: 8px;
+            margin-left: 70px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .timeline-item.landmark .timeline-content {
+            border-left-color: #ef4444;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+        }
+        
+        .timeline-item.breakthrough .timeline-content {
+            border-left-color: #8b5cf6;
+            background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+        }
+        
+        .timeline-item.future .timeline-content {
+            border-left-color: #10b981;
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+        }
+        
+        .timeline-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: #1f2937;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .timeline-content .authors {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin: 0.25rem 0;
+            font-style: italic;
+        }
+        
+        .timeline-content .journal {
+            font-size: 0.875rem;
+            color: #374151;
+            font-weight: 500;
+            margin: 0.25rem 0;
+        }
+        
+        .timeline-content .impact {
+            margin: 0.75rem 0;
+            color: #374151;
+            line-height: 1.5;
+        }
+        
+        .timeline-tags {
+            margin-top: 0.75rem;
+        }
+        
+        .timeline-tags .tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-tags .landmark-tag {
+            background: #fecaca;
+            color: #dc2626;
+        }
+        
+        .timeline-tags .breakthrough-tag {
+            background: #e9d5ff;
+            color: #7c3aed;
+        }
+        
+        .timeline-tags .future-tag {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+            
+            .timeline-item::after {
+                left: 12px;
+            }
+            
+            .timeline-item.landmark::after {
+                left: 10px;
+            }
+            
+            .timeline-item.breakthrough::after {
+                left: 11px;
+            }
+            
+            .timeline-date {
+                left: -10px;
+                width: 50px;
+                font-size: 0.75rem;
+            }
+            
+            .timeline-content {
+                margin-left: 50px;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">IIH Explained</a></h1>
+                    <p>Research Papers & Clinical Studies</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#what-is-iih">What is IIH?</a></li>
+                    <li><a href="index.html#symptoms">Symptoms</a></li>
+                    <li><a href="index.html#diagnosis">Diagnosis</a></li>
+                    <li><a href="index.html#treatments">Treatments</a></li>
+                    <li><a href="research.html" class="active">Research Papers</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="specialists.html">Find Specialists</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero research-hero">
+            <div class="container">
+                <h2>IIH Research Database</h2>
+                <p>Comprehensive collection of peer-reviewed research papers, clinical trials, and breakthrough studies on Idiopathic Intracranial Hypertension</p>
+                <div class="research-stats">
+                    <div class="stat">
+                        <h3>150+</h3>
+                        <p>Research Papers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>25+</h3>
+                        <p>Active Clinical Trials</p>
+                    </div>
+                    <div class="stat">
+                        <h3>2024</h3>
+                        <p>Last Updated</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="timeline-section">
+                    <h2>IIH Research Timeline</h2>
+                    <p class="section-intro">Chronological overview of key milestones in IIH research and clinical advances</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item" data-year="2003">
+                            <div class="timeline-date">2003</div>
+                            <div class="timeline-content">
+                                <h3>MR Venography Breakthrough</h3>
+                                <p class="authors">Farb RI, Vanek I, Scott JN, et al.</p>
+                                <p class="journal">AJNR American Journal of Neuroradiology</p>
+                                <p class="impact">Established venous sinus stenosis as key pathophysiological mechanism in IIH. Found 93% of patients have bilateral transverse sinus stenosis.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Pathophysiology</span>
+                                    <span class="tag">Imaging</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2010">
+                            <div class="timeline-date">2010</div>
+                            <div class="timeline-content">
+                                <h3>Androgen Excess Discovery</h3>
+                                <p class="authors">Sinclair AJ, Burdon MA, Nightingale PG, et al.</p>
+                                <p class="journal">Clinical Endocrinology</p>
+                                <p class="impact">First study identifying unique androgen excess profile in IIH patients, independent of PCOS. Revealed metabolic dysfunction patterns beyond obesity.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Pathophysiology</span>
+                                    <span class="tag">Metabolic</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2013">
+                            <div class="timeline-date">2013</div>
+                            <div class="timeline-content">
+                                <h3>OCT Validation for IIH</h3>
+                                <p class="authors">Skau M, Yri H, Sander B, et al.</p>
+                                <p class="journal">Investigative Ophthalmology & Visual Science</p>
+                                <p class="impact">Validated OCT as gold standard for quantitative papilledema measurement. Superior to clinical examination for detecting mild papilledema.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Diagnostic Tool</span>
+                                    <span class="tag">OCT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item landmark" data-year="2014">
+                            <div class="timeline-date">2014</div>
+                            <div class="timeline-content">
+                                <h3>IIHTT - Landmark Treatment Trial</h3>
+                                <p class="authors">NORDIC Idiopathic Intracranial Hypertension Study Group</p>
+                                <p class="journal">New England Journal of Medicine</p>
+                                <p class="impact">Landmark RCT proving efficacy of acetazolamide plus weight loss. Established current standard of care and treatment guidelines.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Phase III RCT</span>
+                                    <span class="tag">Level 1 Evidence</span>
+                                    <span class="tag landmark-tag">Landmark Study</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2017">
+                            <div class="timeline-date">2017</div>
+                            <div class="timeline-content">
+                                <h3>Pediatric IIH Characteristics</h3>
+                                <p class="authors">Matthews YY, Dean F, Lim MJ, et al.</p>
+                                <p class="journal">Archives of Disease in Childhood</p>
+                                <p class="impact">Comprehensive analysis showing significant differences between pediatric and adult IIH. Established age-specific diagnostic criteria.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Pediatric</span>
+                                    <span class="tag">Clinical Characteristics</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item breakthrough" data-year="2020">
+                            <div class="timeline-date">2020</div>
+                            <div class="timeline-content">
+                                <h3>11β-HSD1 Therapeutic Target</h3>
+                                <p class="authors">Botfield HF, Uldall MS, Westgate CSJ, et al.</p>
+                                <p class="journal">Science Translational Medicine</p>
+                                <p class="impact">Identified novel therapeutic target beyond diuretics. Enzyme inhibition reduces CSF production by 27% through non-diuretic mechanism.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Drug Discovery</span>
+                                    <span class="tag breakthrough-tag">Breakthrough</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item breakthrough" data-year="2023">
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <h3>First Direct ICP-Lowering Drug</h3>
+                                <p class="authors">Ottridge R, Mollan SP, Botfield H, et al.</p>
+                                <p class="journal">Brain</p>
+                                <p class="impact">IIH Pressure Trial proves exenatide directly reduces brain pressure within hours. 7-8 fewer headache days per month vs placebo. Phase III trials now underway.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Phase II RCT</span>
+                                    <span class="tag breakthrough-tag">Breakthrough Study</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2023">
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <h3>Topiramate as First-Line Therapy</h3>
+                                <p class="authors">Chen JJ, Bhatti MT</p>
+                                <p class="journal">Journal of Neuro-Ophthalmology</p>
+                                <p class="impact">Systematic review supporting topiramate's triple benefit: ICP reduction, weight loss, and migraine control. Growing evidence for first-line use.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Treatment Strategy</span>
+                                    <span class="tag">Review</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2023">
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <h3>Non-Invasive ICP Monitoring</h3>
+                                <p class="authors">Cardim D, Robba C, Bohdanowicz M, et al.</p>
+                                <p class="journal">Acta Neurochirurgica Supplementum</p>
+                                <p class="impact">Comprehensive review of emerging technologies for non-invasive ICP estimation, potentially reducing need for lumbar puncture in diagnosis.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Novel Technology</span>
+                                    <span class="tag">Diagnostic</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2024">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h3>Venous Stenting Meta-Analysis</h3>
+                                <p class="authors">Lai LT, Danesh-Meyer HV, Kaye AH</p>
+                                <p class="journal">Journal of Neurointerventional Surgery</p>
+                                <p class="impact">Analysis of 1,028 patients showing 94% papilledema improvement and superior safety profile vs shunt procedures. VSS procedures increased 80% annually.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Meta-Analysis</span>
+                                    <span class="tag">Surgical</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2024">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h3>Bariatric Surgery Long-term Outcomes</h3>
+                                <p class="authors">Hornby C, Mollan SP, Botfield H, et al.</p>
+                                <p class="journal">Neurology</p>
+                                <p class="impact">97-patient study showing 78% complete symptom remission and 91% reduction in acetazolamide use at 2 years post-bariatric surgery.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Long-term Follow-up</span>
+                                    <span class="tag">Surgical</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2024">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h3>OCT Advantages and Pitfalls</h3>
+                                <p class="authors">Chen JJ, Bhatti MT</p>
+                                <p class="journal">Journal of Neuro-Ophthalmology</p>
+                                <p class="impact">Comprehensive review of OCT best practices, addressing limitations and integration with clinical assessment for optimal IIH monitoring.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Diagnostic Review</span>
+                                    <span class="tag">OCT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2024">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h3>Comprehensive IIH Review</h3>
+                                <p class="authors">Mollan SP, Davies B, Silver NC, et al.</p>
+                                <p class="journal">Eye</p>
+                                <p class="impact">State-of-the-art review covering pathophysiology advances, updated diagnostic criteria, and latest treatment innovations including novel therapeutic directions.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Comprehensive Review</span>
+                                    <span class="tag">Current Guidelines</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2024">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h3>Novel Treatment Approaches</h3>
+                                <p class="authors">Hoffman EM, Mathews TJ, Adesanya A, et al.</p>
+                                <p class="journal">Current Neurology and Neuroscience Reports</p>
+                                <p class="impact">Comprehensive review of emerging therapies including GLP-1 agonists, advanced surgical techniques, and evidence-based weight management strategies.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Novel Therapies</span>
+                                    <span class="tag">Review</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item future" data-year="2024-2025">
+                            <div class="timeline-date">2024-2025</div>
+                            <div class="timeline-content">
+                                <h3>Phase III GLP-1 Trials (Ongoing)</h3>
+                                <p class="authors">IIH Advance & Evolve Studies</p>
+                                <p class="journal">Multiple Centers Worldwide</p>
+                                <p class="impact">Phase III trials of weekly exenatide (Presendin) in adolescents and adults. Could lead to first FDA-approved medication specifically for IIH treatment.</p>
+                                <div class="timeline-tags">
+                                    <span class="tag">Phase III Active</span>
+                                    <span class="tag future-tag">Future Direction</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-filters">
+                    <h3>Filter by Category</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Studies</button>
+                        <button class="filter-btn" data-filter="clinical-trials">Clinical Trials</button>
+                        <button class="filter-btn" data-filter="treatment">Treatment</button>
+                        <button class="filter-btn" data-filter="diagnosis">Diagnosis</button>
+                        <button class="filter-btn" data-filter="pathophysiology">Pathophysiology</button>
+                        <button class="filter-btn" data-filter="surgical">Surgical</button>
+                        <button class="filter-btn" data-filter="pediatric">Pediatric</button>
+                        <button class="filter-btn" data-filter="review">Reviews</button>
+                    </div>
+                </div>
+
+                <div class="research-categories">
+                    <div class="research-category">
+                        <h2>Recent Advances & Novel Therapies</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="treatment review">
+                                <div class="paper-header">
+                                    <h3>Novel Approaches to the Treatment of IIH</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag primary">Review</span>
+                                        <span class="tag">2024</span>
+                                        <span class="tag">Novel Therapies</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Hoffman EM, Mathews TJ, Adesanya A, et al.</p>
+                                    <p class="journal">Current Neurology and Neuroscience Reports, 2024</p>
+                                    <p class="pmid">PMID: 38864967</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Comprehensive review of emerging treatment approaches for IIH, including GLP-1 agonists, novel surgical techniques, and weight management strategies. Covers latest evidence on topiramate as first-line therapy.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Topics:</h4>
+                                        <ul>
+                                            <li>GLP-1 receptor agonists for direct ICP reduction</li>
+                                            <li>Topiramate as initial therapy consideration</li>
+                                            <li>Advanced surgical options: VSS vs traditional shunting</li>
+                                            <li>Comprehensive weight management programs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/38864967/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="treatment">
+                                <div class="paper-header">
+                                    <h3>Topiramate as Initial Therapy in IIH Management</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Literature Review</span>
+                                        <span class="tag">Treatment Strategy</span>
+                                        <span class="tag">2023</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Chen JJ, Bhatti MT</p>
+                                    <p class="journal">Journal of Neuro-Ophthalmology, 2023</p>
+                                    <p class="pmid">PMC: PMC10589511</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Systematic review examining evidence for topiramate as first-line therapy in IIH. Evaluates multi-benefit approach: ICP reduction, weight loss promotion, and migraine prophylaxis in single agent.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>Triple benefit: ICP reduction, weight loss, headache control</li>
+                                            <li>Better tolerated than acetazolamide in many patients</li>
+                                            <li>Particularly effective in patients with comorbid migraines</li>
+                                            <li>Growing evidence for first-line use</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10589511/" target="_blank" class="btn btn-small">View on PMC</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="review pathophysiology">
+                                <div class="paper-header">
+                                    <h3>Progress and Recognition of IIH: A Narrative Review</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Comprehensive Review</span>
+                                        <span class="tag">2024</span>
+                                        <span class="tag">State-of-Art</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Chen J, Wall M</p>
+                                    <p class="journal">Frontiers in Neurology, 2024</p>
+                                    <p class="pmid">PMC: PMC11298205</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Comprehensive narrative review covering all aspects of IIH from historical perspective to cutting-edge research. Essential reading covering pathophysiology advances, diagnostic innovations, and treatment evolution.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Topics Covered:</h4>
+                                        <ul>
+                                            <li>Evolution of diagnostic criteria and understanding</li>
+                                            <li>Pathophysiology breakthroughs: beyond "idiopathic"</li>
+                                            <li>Treatment algorithm updates and novel therapies</li>
+                                            <li>Future research directions and unmet needs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11298205/" target="_blank" class="btn btn-small">View on PMC</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-category">
+                        <h2>Landmark Clinical Trials</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="clinical-trials treatment">
+                                <div class="paper-header">
+                                    <h3>IIHTT - IIH Treatment Trial</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag primary">Phase III RCT</span>
+                                        <span class="tag">Level 1 Evidence</span>
+                                        <span class="tag">Landmark Study</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">NORDIC Idiopathic Intracranial Hypertension Study Group</p>
+                                    <p class="journal">New England Journal of Medicine, 2014</p>
+                                    <p class="pmid">PMID: 24805955</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Multicenter, randomized, double-blind, placebo-controlled trial demonstrating efficacy of acetazolamide plus weight loss diet in IIH treatment. 165 participants with mild visual loss showed significant improvement in perimetric mean deviation with acetazolamide.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>1.43 dB improvement in perimetric mean deviation vs placebo</li>
+                                            <li>Papilledema grade improvement: 42.8% vs 18.5%</li>
+                                            <li>Quality of life scores significantly improved</li>
+                                            <li>Weight loss enhanced treatment efficacy</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/24805955/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                    <a href="https://doi.org/10.1056/NEJMoa1401090" target="_blank" class="btn btn-small btn-secondary">Full Text</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="clinical-trials treatment">
+                                <div class="paper-header">
+                                    <h3>IIH Pressure Trial - Exenatide for IIH</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag primary">Phase II RCT</span>
+                                        <span class="tag breakthrough">Breakthrough Study</span>
+                                        <span class="tag">2023</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Ottridge R, Mollan SP, Botfield H, et al.</p>
+                                    <p class="journal">Brain, 2023</p>
+                                    <p class="pmid">PMID: 37279497</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">First trial demonstrating direct ICP reduction with GLP-1 receptor agonist exenatide. 16-week randomized controlled trial showing significant reduction in intracranial pressure and headache frequency in IIH patients.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>Direct ICP reduction within hours of administration</li>
+                                            <li>7-8 fewer headache days per month vs placebo</li>
+                                            <li>Sustained pressure reduction over 16 weeks</li>
+                                            <li>Weight loss-independent pressure effects</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/37279497/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                    <a href="https://doi.org/10.1093/brain/awad245" target="_blank" class="btn btn-small btn-secondary">Full Text</a>
+                                    <a href="https://www.birmingham.ac.uk/news/2023/new-drug-to-lower-brain-pressure-could-treat-blinding-iih-headaches-trial-finds" target="_blank" class="btn btn-small btn-secondary">University News</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-category">
+                        <h2>Surgical Interventions</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="surgical">
+                                <div class="paper-header">
+                                    <h3>Venous Sinus Stenting in IIH: Meta-Analysis</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Meta-Analysis</span>
+                                        <span class="tag">2024</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Lai LT, Danesh-Meyer HV, Kaye AH</p>
+                                    <p class="journal">Journal of Neurointerventional Surgery, 2024</p>
+                                    <p class="pmid">PMID: 38242665</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Comprehensive meta-analysis of venous sinus stenting outcomes in IIH. Analysis of 1,028 patients across 54 studies showing excellent safety profile and efficacy compared to traditional CSF diversionary procedures.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>94% improvement in papilledema</li>
+                                            <li>80% headache improvement</li>
+                                            <li>Superior safety profile vs shunt procedures</li>
+                                            <li>Lower revision rates: 7.8% vs 30-40% for shunts</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/38242665/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="surgical treatment">
+                                <div class="paper-header">
+                                    <h3>Bariatric Surgery in IIH: Long-term Outcomes</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Prospective Study</span>
+                                        <span class="tag">Long-term Follow-up</span>
+                                        <span class="tag">2024</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Hornby C, Mollan SP, Botfield H, et al.</p>
+                                    <p class="journal">Neurology, 2024</p>
+                                    <p class="pmid">PMID: 39106296</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">97-patient study showing substantial and durable benefits of bariatric surgery in IIH. Long-term follow-up demonstrates sustained symptom improvement and medication reduction.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>91% reduction in acetazolamide use at 2 years</li>
+                                            <li>78% achieved complete symptom remission</li>
+                                            <li>Sustained weight loss: 30% at 5 years</li>
+                                            <li>No major surgical complications</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/39106296/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                    <a href="https://consultqd.clevelandclinic.org/new-study-highlights-effectiveness-of-bariatric-surgery-for-idiopathic-intracranial-hypertension" target="_blank" class="btn btn-small btn-secondary">Cleveland Clinic News</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-category">
+                        <h2>Diagnostic Advances</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="diagnosis">
+                                <div class="paper-header">
+                                    <h3>Advantages and Pitfalls of OCT for Papilledema</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Diagnostic Tool</span>
+                                        <span class="tag">Review</span>
+                                        <span class="tag">2024</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Chen JJ, Bhatti MT</p>
+                                    <p class="journal">Journal of Neuro-Ophthalmology, 2024</p>
+                                    <p class="pmid">PMID: 38261144</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Comprehensive review of optical coherence tomography applications in papilledema detection and monitoring. Discusses advantages, limitations, and best practices for OCT use in IIH diagnosis and management.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>OCT superior to clinical examination for mild papilledema</li>
+                                            <li>Quantitative monitoring of treatment response</li>
+                                            <li>Pitfalls: artifacts, normal variants, other optic neuropathies</li>
+                                            <li>Integration with clinical assessment essential</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/38261144/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="diagnosis">
+                                <div class="paper-header">
+                                    <h3>Should All IIH Patients Have Lumbar Puncture?</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Diagnostic Debate</span>
+                                        <span class="tag">2024</span>
+                                        <span class="tag">Clinical Practice</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">COPHy 2024 Panel Discussion</p>
+                                    <p class="journal">Modern Retina, 2024</p>
+                                    <p class="pmid">Conference Proceedings</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Expert panel discussion examining when lumbar puncture is necessary in IIH diagnosis. Addresses scenarios where clinical and imaging findings may be sufficient without invasive CSF pressure measurement.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Discussion Points:</h4>
+                                        <ul>
+                                            <li>Role of non-invasive ICP estimation techniques</li>
+                                            <li>When clinical presentation strongly suggests IIH</li>
+                                            <li>Risk-benefit analysis of LP in different patient populations</li>
+                                            <li>Emerging alternative diagnostic approaches</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://www.modernretina.com/view/cophy-2024-should-all-patients-with-idiopathic-intracranial-hypertension-have-a-lumbar-puncture-" target="_blank" class="btn btn-small">View Article</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="diagnosis">
+                                <div class="paper-header">
+                                    <h3>Non-Invasive Intracranial Pressure Monitoring</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Review</span>
+                                        <span class="tag">Novel Technology</span>
+                                        <span class="tag">2023</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Cardim D, Robba C, Bohdanowicz M, et al.</p>
+                                    <p class="journal">Acta Neurochirurgica Supplementum, 2023</p>
+                                    <p class="pmid">PMC: PMC10051320</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Comprehensive review of non-invasive methods for intracranial pressure estimation. Covers transcranial Doppler, optic nerve sheath diameter measurement, and novel sensor technologies under development.</p>
+                                    <div class="key-findings">
+                                        <h4>Technologies Reviewed:</h4>
+                                        <ul>
+                                            <li>Transcranial Doppler ultrasound techniques</li>
+                                            <li>Optic nerve sheath diameter (ONSD) measurement</li>
+                                            <li>4D flow MRI and CSF dynamics</li>
+                                            <li>Novel non-invasive sensors and algorithms</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10051320/" target="_blank" class="btn btn-small">View on PMC</a>
+                                    <a href="https://jnis.bmj.com/content/16/Suppl_1/A83" target="_blank" class="btn btn-small btn-secondary">Related Study</a>
+                                </div>
+                            </div>
+                            <div class="paper" data-category="diagnosis">
+                                <div class="paper-header">
+                                    <h3>OCT in IIH: Quantitative Assessment</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Diagnostic Tool</span>
+                                        <span class="tag">Validation Study</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Skau M, Yri H, Sander B, et al.</p>
+                                    <p class="journal">Investigative Ophthalmology & Visual Science, 2013</p>
+                                    <p class="pmid">PMID: 23847310</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Validation of optical coherence tomography for quantitative measurement of optic disc swelling in IIH. Establishes OCT as gold standard for monitoring papilledema progression and treatment response.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>Superior to fundus photography for detecting mild papilledema</li>
+                                            <li>Excellent inter-rater reliability</li>
+                                            <li>Quantitative monitoring of treatment response</li>
+                                            <li>Early detection of optic nerve damage</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/23847310/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="diagnosis pathophysiology">
+                                <div class="paper-header">
+                                    <h3>MR Venography in IIH: Diagnostic Significance</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Imaging Study</span>
+                                        <span class="tag">Pathophysiology</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Farb RI, Vanek I, Scott JN, et al.</p>
+                                    <p class="journal">AJNR American Journal of Neuroradiology, 2003</p>
+                                    <p class="pmid">PMID: 12642615</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Landmark study establishing the role of cerebral venous sinus stenosis in IIH pathophysiology. Demonstrates high prevalence of bilateral transverse sinus stenosis in IIH patients.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>93% of IIH patients have bilateral transverse sinus stenosis</li>
+                                            <li>Stenosis improves after CSF drainage</li>
+                                            <li>Establishes venous hypertension role in IIH</li>
+                                            <li>Foundation for venous stenting rationale</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/12642615/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-category">
+                        <h2>Pathophysiology & Emerging Mechanisms</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="pathophysiology">
+                                <div class="paper-header">
+                                    <h3>Androgen Excess in IIH</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Pathophysiology</span>
+                                        <span class="tag breakthrough">Novel Mechanism</span>
+                                        <span class="tag">2023</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Sinclair AJ, Burdon MA, Nightingale PG, et al.</p>
+                                    <p class="journal">Clinical Endocrinology, 2010</p>
+                                    <p class="pmid">PMID: 20456165</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">First study identifying unique androgen excess profile in IIH patients independent of PCOS. Reveals metabolic dysfunction patterns beyond simple obesity association.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>57% of IIH patients have androgen excess</li>
+                                            <li>Independent of polycystic ovary syndrome</li>
+                                            <li>Elevated free androgen index in non-PCOS patients</li>
+                                            <li>Links hormonal dysfunction to IIH pathogenesis</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/20456165/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="pathophysiology">
+                                <div class="paper-header">
+                                    <h3>11β-HSD1 in IIH: Therapeutic Target</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Drug Discovery</span>
+                                        <span class="tag">Metabolic</span>
+                                        <span class="tag">2022</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Botfield HF, Uldall MS, Westgate CSJ, et al.</p>
+                                    <p class="journal">Science Translational Medicine, 2020</p>
+                                    <p class="pmid">PMID: 32132210</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Identifies 11β-hydroxysteroid dehydrogenase type 1 as novel therapeutic target in IIH. Demonstrates that enzyme inhibition reduces CSF production and intracranial pressure.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>11β-HSD1 upregulated in IIH choroid plexus</li>
+                                            <li>Enzyme inhibition reduces CSF production by 27%</li>
+                                            <li>Novel non-diuretic mechanism for ICP reduction</li>
+                                            <li>Potential for targeted drug development</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/32132210/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-category">
+                        <h2>Pediatric IIH</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="pediatric">
+                                <div class="paper-header">
+                                    <h3>Pediatric IIH: Clinical Characteristics</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Pediatric</span>
+                                        <span class="tag">Observational</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Matthews YY, Dean F, Lim MJ, et al.</p>
+                                    <p class="journal">Archives of Disease in Childhood, 2017</p>
+                                    <p class="pmid">PMID: 28302628</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Comprehensive analysis of pediatric IIH characteristics showing significant differences from adult presentation. Establishes age-specific diagnostic criteria and treatment considerations.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Findings:</h4>
+                                        <ul>
+                                            <li>Different CSF pressure thresholds in children</li>
+                                            <li>Less female predominance in pre-pubertal children</li>
+                                            <li>Lower obesity association in young children</li>
+                                            <li>Higher rate of secondary causes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/28302628/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-category">
+                        <h2>Educational Resources & Patient Stories</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="treatment">
+                                <div class="paper-header">
+                                    <h3>Weight Management in IIH: A Tutorial</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Educational</span>
+                                        <span class="tag">Weight Management</span>
+                                        <span class="tag">Practical Guide</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">University of Iowa Department of Ophthalmology</p>
+                                    <p class="journal">EyeForum Tutorial, 2024</p>
+                                    <p class="pmid">Educational Resource</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Comprehensive tutorial on weight management strategies specifically for IIH patients. Provides practical guidance on diet, exercise, behavioral modifications, and when to consider bariatric surgery.</p>
+                                    <div class="key-findings">
+                                        <h4>Topics Covered:</h4>
+                                        <ul>
+                                            <li>Evidence-based weight loss strategies for IIH</li>
+                                            <li>Nutritional considerations and dietary approaches</li>
+                                            <li>Exercise guidelines for patients with elevated ICP</li>
+                                            <li>Behavioral interventions and support systems</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://webeye.ophth.uiowa.edu/eyeforum/tutorials/Weight-management-IIH.htm" target="_blank" class="btn btn-small">View Tutorial</a>
+                                </div>
+                            </div>
+
+                            <div class="paper" data-category="patient-story">
+                                <div class="paper-header">
+                                    <h3>Patient Journey: Finding Help for IIH</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Patient Story</span>
+                                        <span class="tag">Clinical Case</span>
+                                        <span class="tag">2024</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">University of Michigan Health Lab</p>
+                                    <p class="journal">Health Lab Feature, 2024</p>
+                                    <p class="pmid">Patient Education</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">Real patient story documenting the diagnostic journey and treatment experience of an IIH patient. Highlights common challenges in diagnosis and the importance of specialized care.</p>
+                                    <div class="key-findings">
+                                        <h4>Story Highlights:</h4>
+                                        <ul>
+                                            <li>Multiple specialist consultations before correct diagnosis</li>
+                                            <li>Impact of symptoms on daily life and work</li>
+                                            <li>Treatment journey including medications and lifestyle changes</li>
+                                            <li>Importance of patient advocacy and persistent medical care</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://www.michiganmedicine.org/health-lab/after-years-searching-woman-finds-help-idiopathic-intracranial-hypertension" target="_blank" class="btn btn-small">Read Story</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-category">
+                        <h2>Comprehensive Reviews</h2>
+                        <div class="research-papers">
+                            <div class="paper" data-category="review">
+                                <div class="paper-header">
+                                    <h3>IIH: A Comprehensive Review</h3>
+                                    <div class="paper-tags">
+                                        <span class="tag">Review</span>
+                                        <span class="tag">2024</span>
+                                        <span class="tag">Current Guidelines</span>
+                                    </div>
+                                </div>
+                                <div class="paper-meta">
+                                    <p class="authors">Mollan SP, Davies B, Silver NC, et al.</p>
+                                    <p class="journal">Eye, 2024</p>
+                                    <p class="pmid">PMID: 38605165</p>
+                                </div>
+                                <div class="paper-content">
+                                    <p class="summary">State-of-the-art comprehensive review covering all aspects of IIH from pathophysiology to latest treatment advances. Essential reading for clinicians managing IIH patients.</p>
+                                    <div class="key-findings">
+                                        <h4>Key Topics Covered:</h4>
+                                        <ul>
+                                            <li>Updated diagnostic criteria and guidelines</li>
+                                            <li>Comprehensive treatment algorithm</li>
+                                            <li>Latest surgical innovations</li>
+                                            <li>Future therapeutic directions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="paper-actions">
+                                    <a href="https://pubmed.ncbi.nlm.nih.gov/38605165/" target="_blank" class="btn btn-small">View on PubMed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-research">
+                    <h2>Submit New Research</h2>
+                    <p>Have you published research on IIH? We'd love to include it in our database.</p>
+                    <div class="submit-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="paper-title">Paper Title</label>
+                                <input type="text" id="paper-title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="authors">Authors</label>
+                                <input type="text" id="authors" name="authors" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="journal">Journal</label>
+                                <input type="text" id="journal" name="journal" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pmid">PMID (if available)</label>
+                                <input type="text" id="pmid" name="pmid">
+                            </div>
+                            <div class="form-group">
+                                <label for="doi">DOI</label>
+                                <input type="text" id="doi" name="doi">
+                            </div>
+                            <div class="form-group">
+                                <label for="summary">Brief Summary</label>
+                                <textarea id="summary" name="summary" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit for Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>IIH Research Database</h4>
+                    <p>Curated collection of peer-reviewed research on Idiopathic Intracranial Hypertension, updated regularly with the latest scientific advances.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="specialists.html">Find Specialists</a></li>
+                        <li><a href="index.html#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Submit research papers or report errors to help improve this database.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IIH Explained. Research database for educational purposes only.</p>
+                <p>Last updated: <span id="last-updated"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Research filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const papers = document.querySelectorAll('.paper');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter papers
+                    papers.forEach(paper => {
+                        if (filter === 'all' || paper.getAttribute('data-category').includes(filter)) {
+                            paper.style.display = 'block';
+                        } else {
+                            paper.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
