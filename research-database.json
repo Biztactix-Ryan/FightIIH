@@ -216,6 +216,97 @@
       "category": "research"
     },
     {
+      "id": "azzam-2025-tirzepatide",
+      "title": "Efficacy of Tirzepatide Dual GIP/GLP-1 Receptor Agonist in Patients With Idiopathic Intracranial Hypertension. A Real-World Propensity Score-Matched Study",
+      "authors": ["Azzam AY", "Essibayi MA", "Farkas N", "et al."],
+      "journal": "Endocrinol Diabetes Metab",
+      "year": 2025,
+      "month": 3,
+      "pubmedId": "39949069",
+      "doi": "10.1002/edm2.70019",
+      "abstract": "Real-world study demonstrating efficacy of tirzepatide, a dual GIP/GLP-1 receptor agonist, in IIH patients using propensity score matching.",
+      "tags": ["GLP-1 Agonists", "Tirzepatide", "Real-World Evidence", "Novel Treatment"],
+      "category": "research"
+    },
+    {
+      "id": "azzam-2025-liraglutide",
+      "title": "Liraglutide for idiopathic intracranial hypertension: a real-world propensity score-matched study",
+      "authors": ["Azzam AY", "Essibayi MA", "Vaishnav D", "et al."],
+      "journal": "Ann Clin Transl Neurol",
+      "year": 2025,
+      "month": 4,
+      "pubmedId": "39949066",
+      "doi": "10.1002/acn3.52300",
+      "abstract": "Propensity score-matched study showing effectiveness of liraglutide (GLP-1 agonist) for IIH treatment in real-world clinical practice.",
+      "tags": ["GLP-1 Agonists", "Liraglutide", "Real-World Evidence"],
+      "category": "research"
+    },
+    {
+      "id": "sassani-2025-intracranial-compliance",
+      "title": "Non-invasive assessment of intracranial compliance in idiopathic intracranial hypertension: an MRI-ICP study",
+      "authors": ["Sassani M", "Mitchell JL", "Yiangou A", "et al."],
+      "journal": "Eye (Lond)",
+      "year": 2025,
+      "month": 5,
+      "pubmedId": "39856425",
+      "doi": "10.1038/s41433-024-03547-7",
+      "abstract": "Novel MRI-based method for non-invasive assessment of intracranial compliance in IIH, correlating with invasive ICP measurements.",
+      "tags": ["MRI", "Non-invasive Monitoring", "Intracranial Compliance"],
+      "category": "research"
+    },
+    {
+      "id": "mitchell-2025-randomized-crossover",
+      "title": "A randomized sequential cross-over trial evaluating five purportedly ICP-lowering drugs in idiopathic intracranial hypertension",
+      "authors": ["Mitchell JL", "Lyons HS", "Walker JK", "et al."],
+      "journal": "Headache",
+      "year": 2025,
+      "month": 2,
+      "pubmedId": "39853738",
+      "doi": "10.1111/head.14897",
+      "abstract": "Sequential cross-over trial comparing acetazolamide, topiramate, zonisamide, furosemide, and amiloride using telemetric ICP monitoring. Found modest ICP reductions with significant side effects.",
+      "tags": ["Clinical Trial", "Drug Comparison", "ICP Monitoring", "Carbonic Anhydrase Inhibitors"],
+      "category": "clinical-trial"
+    },
+    {
+      "id": "fraz-2025-nationwide-prevalence",
+      "title": "Nationwide Prevalence and Geographic Variation of Idiopathic Intracranial Hypertension among Women in the United States",
+      "authors": ["Fraz MA", "Kim BM", "Chen JJ", "et al."],
+      "journal": "Ophthalmology",
+      "year": 2025,
+      "month": 4,
+      "pubmedId": "39510331",
+      "doi": "10.1016/j.ophtha.2024.10.031",
+      "abstract": "Large-scale epidemiological study revealing geographic variation in IIH prevalence among women across the United States, identifying regional hotspots.",
+      "tags": ["Epidemiology", "Geographic Variation", "Population Study"],
+      "category": "research"
+    },
+    {
+      "id": "friedman-2024-special-considerations",
+      "title": "Special Considerations in the Treatment of Idiopathic Intracranial Hypertension",
+      "authors": ["Friedman DI"],
+      "journal": "Curr Neurol Neurosci Rep",
+      "year": 2024,
+      "month": 12,
+      "pubmedId": "39656331",
+      "doi": "10.1007/s11910-024-01398-z",
+      "abstract": "Comprehensive review of special treatment considerations in IIH including pregnancy, pediatric cases, and treatment-resistant disease.",
+      "tags": ["Treatment Guidelines", "Special Populations", "Clinical Management"],
+      "category": "review"
+    },
+    {
+      "id": "beier-2024-mri-signs",
+      "title": "Magnetic Resonance Imaging Signs of Idiopathic Intracranial Hypertension",
+      "authors": ["Beier D", "Korsbæk JJ", "Bsteh G", "et al."],
+      "journal": "JAMA Netw Open",
+      "year": 2024,
+      "month": 7,
+      "pubmedId": "38958974",
+      "doi": "10.1001/jamanetworkopen.2024.20138",
+      "abstract": "Systematic evaluation of MRI signs in IIH, establishing diagnostic criteria and sensitivity/specificity of various imaging markers.",
+      "tags": ["MRI", "Diagnostic Imaging", "Diagnostic Criteria"],
+      "category": "research"
+    },
+    {
       "id": "fargen-2024-jugular-hypothesis",
       "title": "The Jugular Hypothesis",
       "authors": ["Kyle M. Fargen", "et al."],
@@ -291,6 +382,45 @@
       "abstract": "State-of-the-art review covering pathophysiology advances, updated diagnostic criteria, and latest treatment innovations including novel therapeutic directions.",
       "tags": ["Comprehensive Review", "Current Guidelines", "Treatment"],
       "category": "review"
+    },
+    {
+      "id": "wills-2025-bariatric-surgery-outcomes",
+      "title": "Clinical outcomes of bariatric surgery in patients with obesity and idiopathic intracranial hypertension",
+      "authors": ["Wills MV", "Alavi MH", "Aleassa EM", "et al."],
+      "journal": "Surg Endosc",
+      "year": 2025,
+      "month": 1,
+      "pubmedId": "39365468",
+      "doi": "10.1007/s00464-024-11254-3",
+      "abstract": "Multi-center study demonstrating effectiveness of bariatric surgery in IIH patients with obesity, showing sustained improvements in symptoms and reduced medication requirements.",
+      "tags": ["Bariatric Surgery", "Obesity", "Treatment Outcomes"],
+      "category": "research"
+    },
+    {
+      "id": "korsbæk-2024-metabolic-dysfunction",
+      "title": "Metabolic Dysfunction in New-Onset Idiopathic Intracranial Hypertension: Identification of Novel Biomarkers",
+      "authors": ["Korsbæk JJ", "Jensen RH", "Beier D", "et al."],
+      "journal": "Ann Neurol",
+      "year": 2024,
+      "month": 9,
+      "pubmedId": "39140399",
+      "doi": "10.1002/ana.27010",
+      "abstract": "Identified novel metabolic biomarkers in new-onset IIH, revealing specific metabolic dysfunction patterns that could aid in diagnosis and treatment targeting.",
+      "tags": ["Metabolic Biomarkers", "Pathophysiology", "Novel Diagnostics"],
+      "category": "research"
+    },
+    {
+      "id": "prokop-2024-onsf-meta-analysis",
+      "title": "Effectiveness of optic nerve sheath fenestration in preserving vision in idiopathic intracranial hypertension: an updated meta-analysis and systematic review",
+      "authors": ["Prokop K", "Opęchowska A", "Sieśkiewicz A", "et al."],
+      "journal": "Acta Neurochir (Wien)",
+      "year": 2024,
+      "month": 11,
+      "pubmedId": "39585430",
+      "doi": "10.1007/s00701-024-06345-y",
+      "abstract": "Updated meta-analysis of optic nerve sheath fenestration outcomes, showing high success rates in vision preservation for IIH patients with severe papilledema.",
+      "tags": ["ONSF", "Surgical Treatment", "Meta-Analysis", "Vision Preservation"],
+      "category": "meta-analysis"
     }
   ]
 }
