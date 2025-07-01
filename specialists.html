@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IIH Specialists Directory - Find Expert Care Worldwide</title>
     <meta name="description" content="Global directory of IIH specialists, neuro-ophthalmologists, and treatment centers. Find expert care for Idiopathic Intracranial Hypertension worldwide.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fightiih.org/specialists.html">
+    <meta property="og:title" content="IIH Specialists Directory - Find Expert Care Worldwide">
+    <meta property="og:description" content="Global directory of IIH specialists, neuro-ophthalmologists, and treatment centers. Find expert care for Idiopathic Intracranial Hypertension worldwide.">
+    <meta property="og:image" content="https://fightiih.org/images/iih-og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fightiih.org/specialists.html">
+    <meta property="twitter:title" content="IIH Specialists Directory - Find Expert Care Worldwide">
+    <meta property="twitter:description" content="Global directory of IIH specialists, neuro-ophthalmologists, and treatment centers. Find expert care for Idiopathic Intracranial Hypertension worldwide.">
+    <meta property="twitter:image" content="https://fightiih.org/images/iih-og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fightiih.org/specialists.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1069,6 +1092,32 @@
 
         // Set last updated date
         document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "name": "IIH Specialists Directory",
+        "description": "Global directory of IIH specialists, neuro-ophthalmologists, and treatment centers",
+        "url": "https://fightiih.org/specialists.html",
+        "specialty": {
+            "@type": "MedicalSpecialty",
+            "name": "Neuro-ophthalmology"
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Idiopathic Intracranial Hypertension",
+            "alternateName": ["IIH", "Pseudotumor Cerebri"]
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "IIH Specialists Directory",
+            "description": "Directory of medical professionals specializing in IIH treatment",
+            "numberOfItems": "100+"
+        }
+    }
     </script>
 </body>
 </html>
