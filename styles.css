@@ -620,14 +620,14 @@ footer {
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 0.9rem;
 }
 
 .footer-links a:hover {
-    color: white;
+    color: #7dd3fc;
     text-decoration: underline;
 }
 
@@ -683,14 +683,14 @@ footer {
 }
 
 .footer-links-bottom a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
 .footer-links-bottom a:hover {
-    color: white;
+    color: #7dd3fc;
     text-decoration: underline;
 }
 
