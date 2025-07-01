@@ -110,10 +110,13 @@ p {
     text-decoration: none;
 }
 
+.nav-logo img,
 .header-logo {
-    height: 50px;
-    width: auto;
+    height: 35px !important;
+    max-height: 35px !important;
+    width: auto !important;
     display: block;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -413,8 +416,10 @@ input:focus, select:focus, textarea:focus {
         padding: 0 1rem;
     }
     
+    .nav-logo img,
     .header-logo {
-        height: 40px;
+        height: 30px !important;
+        max-height: 30px !important;
     }
     
     .nav-menu {
