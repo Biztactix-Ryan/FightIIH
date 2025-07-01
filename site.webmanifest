@@ -1,0 +1,22 @@
+{
+    "name": "FightIIH - IIH Explained",
+    "short_name": "FightIIH",
+    "description": "Simple, easy-to-understand information about Idiopathic Intracranial Hypertension",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#2c5aa0",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/"
+}
