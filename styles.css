@@ -102,27 +102,18 @@ p {
 
 .nav-logo {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    align-items: center;
 }
 
-.nav-logo h1 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0;
-    letter-spacing: -0.5px;
+.nav-logo a {
+    display: block;
+    text-decoration: none;
 }
 
-.nav-logo p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin: 0;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+.header-logo {
+    height: 50px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -422,12 +413,8 @@ input:focus, select:focus, textarea:focus {
         padding: 0 1rem;
     }
     
-    .nav-logo h1 {
-        font-size: 1.5rem;
-    }
-    
-    .nav-logo p {
-        font-size: 0.8rem;
+    .header-logo {
+        height: 40px;
     }
     
     .nav-menu {
