@@ -112,8 +112,8 @@ p {
 
 .nav-logo img,
 .header-logo {
-    height: 35px !important;
-    max-height: 35px !important;
+    height: 55px !important;
+    max-height: 55px !important;
     width: auto !important;
     display: block;
     object-fit: contain;
@@ -418,8 +418,8 @@ input:focus, select:focus, textarea:focus {
     
     .nav-logo img,
     .header-logo {
-        height: 30px !important;
-        max-height: 30px !important;
+        height: 45px !important;
+        max-height: 45px !important;
     }
     
     .nav-menu {
@@ -636,7 +636,7 @@ footer {
 }
 
 .ribbon-logo {
-    height: 40px;
+    height: 60px;
     width: auto;
 }
 
